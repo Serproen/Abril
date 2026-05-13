@@ -62,14 +62,6 @@ tr:hover td{background:var(--bg4)}
 .cr{display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(192,124,16,.18);border:1.5px solid rgba(192,124,16,.5);margin-right:5px}
 .cp{display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(11,122,122,.18);border:1.5px solid rgba(11,122,122,.5);margin-right:5px}
 /* Resumen ejecutivo */
-.exec-box{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:10px;padding:16px 20px;margin-bottom:20px}
-.exec-box.purple{border-left-color:var(--pu)}
-.exec-box.amber{border-left-color:var(--am)}
-.exec-box.teal{border-left-color:var(--tl)}
-.exec-title{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
-.exec-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
-.exec-item{font-size:12px;color:var(--text2);line-height:1.55;padding-left:14px;border-left:2px solid var(--border)}
-.exec-item strong{color:var(--text);display:block;margin-bottom:1px;font-weight:700;font-size:12px}
 /* Mini-KPI row */
 .mini-kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:18px}
 .mk{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 13px}
@@ -123,14 +115,6 @@ tr:hover td{background:var(--bg4)}
     <div class="kpi"><div class="kpi-label">Mejor Mes</div><div class="kpi-val" style="font-size:15px">Marzo</div><div class="kpi-sub">$521.2M acumulado</div></div>
   </div>
 
-  <div class="exec-box">
-    <div class="exec-title">📋 Resumen Ejecutivo — Ene–Abr 2026</div>
-    <div class="exec-body">
-      <div class="exec-item"><strong>Resultado global positivo</strong>Ventas acumuladas de $2.018M superan el Budget en +$65.1M (+3.3%). El desempeño es sólido considerando la variación negativa vs. 2025 (−9.9%).</div>
-      <div class="exec-item"><strong>Home Care B2B, motor del período</strong>Única línea con superávit relevante: +$61.7M (+8.3%). MUTUAL Santiago y ESACHS explican el 80% del volumen del área.</div>
-      <div class="exec-item"><strong>Abril muestra desaceleración</strong>Primer mes bajo $520M con $514.1M. Residencia cae −$36.1M vs Marzo. Se requiere seguimiento en Q2.</div>
-      <div class="exec-item"><strong>PSP y Particulares bajo Budget</strong>PSP −$1.9M (−0.4%) y Particulares −$1.4M (−1.0%). Brechas contenidas pero con tendencia a monitorear.</div>
-    </div>
   </div>
 
   <div class="grid2">
@@ -174,14 +158,6 @@ tr:hover td{background:var(--bg4)}
     <div class="mk"><div class="mk-l">Abril</div><div class="mk-v">$514.1M</div><div class="mk-s" style="color:var(--dn)">−$7.1M vs Mar</div></div>
   </div>
 
-  <div class="exec-box">
-    <div class="exec-title">📋 Resumen Ejecutivo — Evolución Mensual</div>
-    <div class="exec-body">
-      <div class="exec-item"><strong>Enero — Arranque sólido</strong>$499.9M de apertura en línea con el ritmo presupuestado. HC B2B concentra el 39.5% del mes con $197.7M.</div>
-      <div class="exec-item"><strong>Febrero — Leve contracción</strong>Caída de $17.4M (−3.5%) liderada por HC B2B (−$20.4M). PSP y Residencia mantienen niveles estables.</div>
-      <div class="exec-item"><strong>Marzo — Pico del período</strong>Mejor mes con $521.2M (+8.0% vs Febrero). PSP alcanza su máximo de $136.6M. Todas las líneas con crecimiento.</div>
-      <div class="exec-item"><strong>Abril — Desaceleración moderada</strong>−$7.1M vs Marzo. Residencia explica la caída (−$36.1M), compensada parcialmente por HC B2B (+$28.6M) que marca su máximo mensual.</div>
-    </div>
   </div>
 
   <div class="card" style="margin-bottom:16px"><h3>Venta mensual por línea</h3><div class="chart-wrap-lg"><canvas id="mes-barras"></canvas></div></div>
@@ -212,14 +188,6 @@ tr:hover td{background:var(--bg4)}
     <div class="mk"><div class="mk-l">Clientes activos</div><div class="mk-v">20+</div><div class="mk-s">en el período</div></div>
   </div>
 
-  <div class="exec-box">
-    <div class="exec-title">📋 Resumen Ejecutivo — Top Clientes</div>
-    <div class="exec-body">
-      <div class="exec-item"><strong>Alta concentración en MUTUAL Santiago</strong>Aporta $411.4M (20.4% del total). Su comportamiento en Abril con crecimiento sostenido es clave para el resultado de HC B2B.</div>
-      <div class="exec-item"><strong>Sótero del Río y San Juan de Dios anclan Residencia</strong>Con $207.2M y $199.2M respectivamente, representan el 71.9% de la línea. La caída de Residencia en Abril se asocia a ambos clientes.</div>
-      <div class="exec-item"><strong>SANOFI lidera PSP</strong>$201.4M acumulados, con PFIZER DE CHILE ($120.9M) como segundo. Juntos explican el 62.3% del área PSP.</div>
-      <div class="exec-item"><strong>Nuevo cliente en Abril</strong>Univ. Las Américas ingresa en Residencia con $4.6M. Oportunidad de crecimiento a desarrollar en Q2.</div>
-    </div>
   </div>
 
   <div class="card" style="margin-bottom:16px"><h3>Top 10 clientes — Venta acumulada</h3><div style="position:relative;height:320px"><canvas id="top10"></canvas></div></div>
@@ -255,14 +223,6 @@ tr:hover td{background:var(--bg4)}
     <div class="mk"><div class="mk-l">Particulares</div><div class="mk-v">$131.6M</div><div class="mk-s" style="color:var(--dn)">−1.0% vs Bdgt</div></div>
   </div>
 
-  <div class="exec-box">
-    <div class="exec-title">📋 Resumen Ejecutivo — Por Línea</div>
-    <div class="exec-body">
-      <div class="exec-item"><strong>HC B2B supera ampliamente el Budget</strong>+$61.7M sobre meta con crecimiento mensual sostenido: de $177.3M en Febrero a $228.3M en Abril. Lidera el período con holgura.</div>
-      <div class="exec-item"><strong>PSP con leve déficit, pero creciente</strong>−$1.9M (−0.4%) sobre Budget acumulado. Sin embargo, la línea muestra tendencia ascendente mes a mes: de $113.8M en Enero a $142.8M en Abril (+25.5%).</div>
-      <div class="exec-item"><strong>Residencia positiva pero en riesgo</strong>+$6.7M (+1.2%) acumulado, pero con caída pronunciada en Abril (−$36.1M). La tendencia decreciente desde Enero merece atención en Q2.</div>
-      <div class="exec-item"><strong>Particulares dentro de rango</strong>Brecha de −$1.4M (−1.0%) sobre Budget, considerada marginal. Volatilidad mensual entre $28.5M y $37.9M sin tendencia definida.</div>
-    </div>
   </div>
 
   <div class="grid2">
@@ -296,15 +256,6 @@ tr:hover td{background:var(--bg4)}
     <div class="mk"><div class="mk-l">Mejor Mes</div><div class="mk-v" style="font-size:14px">Abril</div><div class="mk-s" style="color:var(--up)">$228.3M</div></div>
   </div>
 
-  <!-- RESUMEN EJECUTIVO HC B2B -->
-  <div class="exec-box">
-    <div class="exec-title">📋 Resumen Ejecutivo — Home Care B2B</div>
-    <div class="exec-body">
-      <div class="exec-item"><strong>Línea líder del período</strong>Con $802.9M acumulados, HC B2B supera el Budget en +$61.7M (+8.3%), siendo la única línea con superávit significativo. Representa el 39.8% de la venta total de Serproen.</div>
-      <div class="exec-item"><strong>Tendencia mensual ascendente</strong>Tras la caída en Febrero ($177.3M), la línea se recupera en Marzo ($199.7M) y alcanza su máximo en Abril ($228.3M), con un alza de +14.3% respecto a Enero.</div>
-      <div class="exec-item"><strong>MUTUAL Santiago y ESACHS anclan el área</strong>Ambos clientes suman $645.3M (80.4% del área). MUTUAL Santiago ($411.4M) es el cliente individual más relevante de toda la compañía.</div>
-      <div class="exec-item"><strong>Nuevos clientes activos en Abril</strong>OPERATIVOS ($18.8M) ingresa al área en Abril. MEGASALUD aporta $2.1M. Diversificación incipiente que abre oportunidades de crecimiento.</div>
-    </div>
   </div>
 
   <div class="card" style="margin-bottom:16px"><h3>Venta por cliente — Acumulado Ene–Abr</h3><div class="chart-wrap-lg"><canvas id="hc-clientes"></canvas></div></div>
@@ -337,15 +288,6 @@ tr:hover td{background:var(--bg4)}
     <div class="mk"><div class="mk-l">Mejor Mes</div><div class="mk-v" style="font-size:14px">Abril</div><div class="mk-s" style="color:var(--up)">$142.8M</div></div>
   </div>
 
-  <!-- RESUMEN EJECUTIVO PSP -->
-  <div class="exec-box purple">
-    <div class="exec-title">📋 Resumen Ejecutivo — PSP (Soporte a Pacientes)</div>
-    <div class="exec-body">
-      <div class="exec-item"><strong>Déficit marginal, tendencia positiva</strong>El área acumula −$1.9M (−0.4%) bajo Budget, una brecha técnicamente irrelevante. Más importante: la línea crece mes a mes de forma consistente, de $113.8M en Enero a $142.8M en Abril (+25.5%).</div>
-      <div class="exec-item"><strong>SANOFI y PFIZER DE CHILE dominan el área</strong>Con $201.4M y $120.9M respectivamente, representan el 62.3% de la venta PSP. La concentración en estos dos clientes es el principal riesgo de la línea.</div>
-      <div class="exec-item"><strong>Cartera diversificada y activa</strong>9 clientes activos en el período (PTC, ASTRAZENECA, BIOMARIN, LINDE GAS, FARMAHUB, MERCK, COLMENA). ASTRAZENECA muestra aceleración en Abril ($21.1M de los $52.5M totales), señal positiva.</div>
-      <div class="exec-item"><strong>Proyección favorable para Q2</strong>Si la tendencia ascendente se mantiene, PSP podría cerrar el primer semestre por encima del Budget acumulado. El foco debe ser sostener el crecimiento en SANOFI y ASTRAZENECA.</div>
-    </div>
   </div>
 
   <div class="card" style="margin-bottom:16px"><h3>Venta por cliente — Acumulado Ene–Abr</h3><div class="chart-wrap-lg"><canvas id="psp-clientes"></canvas></div></div>
@@ -381,15 +323,6 @@ tr:hover td{background:var(--bg4)}
     <div class="mk"><div class="mk-l">Tendencia Abril</div><div class="mk-v" style="color:var(--dn);font-size:14px">−$36.1M</div><div class="mk-s dn">vs Marzo</div></div>
   </div>
 
-  <!-- RESUMEN EJECUTIVO RESIDENCIA -->
-  <div class="exec-box amber">
-    <div class="exec-title">📋 Resumen Ejecutivo — Residencia</div>
-    <div class="exec-body">
-      <div class="exec-item"><strong>Superávit acumulado con señal de alerta</strong>El área cierra Ene–Abr con +$6.7M (+1.2%) sobre Budget. Sin embargo, Abril registra $110.9M, el peor mes del período y −$36.1M respecto a Marzo, una caída del −24.6%.</div>
-      <div class="exec-item"><strong>Sótero del Río y San Juan de Dios como pilares</strong>Ambos hospitales concentran $406.4M (71.8% del área). La variabilidad en sus facturaciones hospitalarias (lag de cobranza) puede explicar fluctuaciones mensuales importantes.</div>
-      <div class="exec-item"><strong>Residencia AM Particular en tercer lugar</strong>$95.1M acumulados (16.8%), con comportamiento más estable que los clientes hospitalarios. Buen ancla para la estabilidad del área.</div>
-      <div class="exec-item"><strong>Incorporación de Univ. Las Américas en Abril</strong>Nuevo cliente con $4.6M en su primer mes. Segmento universitario/educación ofrece potencial de expansión en servicios de salud ocupacional y campus.</div>
-    </div>
   </div>
 
   <div class="card" style="margin-bottom:16px"><h3>Venta por cliente — Acumulado Ene–Abr</h3><div class="chart-wrap-lg"><canvas id="res-clientes"></canvas></div></div>
