@@ -17,8 +17,6 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);font-size:13px;min-height:100vh}
-
-/* NAV */
 .topbar{background:var(--nav);padding:0 22px;display:flex;align-items:center;position:sticky;top:0;z-index:200;box-shadow:0 2px 14px rgba(31,92,58,.3)}
 .logo-area{display:flex;align-items:center;gap:11px;padding:12px 22px 12px 0;margin-right:22px;border-right:1px solid rgba(255,255,255,.14);flex-shrink:0}
 .logo-area svg{width:31px;height:31px}
@@ -27,688 +25,570 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .tabs{display:flex;overflow-x:auto;flex:1;-webkit-overflow-scrolling:touch}
 .tabs::-webkit-scrollbar{display:none}
 .tab{padding:14px 14px;color:rgba(255,255,255,.55);cursor:pointer;font-size:11px;font-weight:600;background:none;border:none;border-bottom:3px solid transparent;white-space:nowrap;transition:all .18s;letter-spacing:.25px}
-.tab:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.06)}
-.tab.active{color:#fff;border-bottom-color:#4CAF82;background:rgba(76,175,130,.12)}
-.nav-pill{margin-left:auto;flex-shrink:0;padding-left:14px;font-size:9.5px;font-family:'DM Mono',monospace;color:rgba(255,255,255,.45);white-space:nowrap}
-
-/* PAGE */
-.page{display:none;padding:20px 22px;max-width:1340px;margin:0 auto}
+.tab:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.07)}
+.tab.active{color:#fff;border-bottom-color:#4CAF82}
+.page{display:none;padding:20px;max-width:1280px;margin:0 auto}
 .page.active{display:block}
-.pg-hd{padding:16px 0 2px;display:flex;align-items:baseline;gap:12px}
-.pg-title{font-size:18px;font-weight:800;color:var(--nav)}
-.pg-sub{font-size:11px;color:var(--text3);font-weight:400}
-
-/* KPI STRIP */
-.kstrip{display:grid;gap:11px;margin-bottom:18px}
-.k6{grid-template-columns:repeat(6,1fr)}
-.k4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:1100px){.k6{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:780px){.k6,.k4{grid-template-columns:repeat(2,1fr)}}
-.kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;position:relative;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:box-shadow .2s}
-.kpi:hover{box-shadow:0 4px 14px rgba(46,139,87,.1)}
-.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--primary)}
-.kpi.am::before{background:var(--am)}.kpi.pu::before{background:var(--pu)}.kpi.tl::before{background:var(--tl)}.kpi.rd::before{background:var(--dn)}
-.klbl{font-size:8.5px;color:var(--text3);text-transform:uppercase;letter-spacing:1.1px;margin-bottom:7px;font-weight:700}
-.kval{font-size:25px;font-weight:800;color:var(--nav);line-height:1;font-family:'DM Mono',monospace}
-.knote{font-size:9.5px;color:var(--text3);margin-top:5px}
-.kd{font-size:9.5px;font-weight:700;margin-top:4px;display:flex;align-items:center;gap:3px}
-.kd.up{color:var(--up)}.kd.dn{color:var(--dn)}
-.arr{width:8px;height:8px}
-
-/* EXEC BOX */
-.exec{background:var(--xpale);border:1px solid var(--pale);border-left:4px solid var(--primary);border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:12px;line-height:1.72;color:var(--text2)}
-.exec strong{color:var(--nav);font-weight:700}
-.exec-icon{margin-right:5px}
-
-/* SECTION LABEL */
-.sl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;color:var(--primary);margin:18px 0 10px;display:flex;align-items:center;gap:9px}
-.sl::after{content:'';flex:1;height:1px;background:var(--border)}
-
-/* GRIDS */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:13px}
-@media(max-width:780px){.g2{grid-template-columns:1fr}}
-
-/* CHART CARD */
-.cc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin-bottom:13px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-.cc canvas{max-height:255px}
-.cc.tall canvas{max-height:310px}
-.ct{font-size:9.5px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:13px}
-
-/* COMP 4 */
-.comp4{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:13px}
-@media(max-width:680px){.comp4{grid-template-columns:repeat(2,1fr)}}
-.cc4{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px 15px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-.c4lbl{font-size:8.5px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;font-weight:700}
-.c4val{font-size:21px;font-weight:800;font-family:'DM Mono',monospace;line-height:1}
-.c4note{font-size:9.5px;color:var(--text3);margin-top:4px}
-.badge{display:inline-flex;align-items:center;gap:3px;margin-top:7px;padding:3px 8px;border-radius:4px;font-size:9.5px;font-weight:700;font-family:'DM Mono',monospace}
-.badge.neg{background:var(--dn-bg);color:var(--dn)}.badge.pos{background:var(--up-bg);color:var(--up)}
-
-/* MINI KPI ROW */
-.mk4{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:18px}
-@media(max-width:680px){.mk4{grid-template-columns:repeat(2,1fr)}}
-.mk{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-.mklbl{font-size:8.5px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;font-weight:700}
-.mkval{font-size:19px;font-weight:800;color:var(--nav);font-family:'DM Mono',monospace}
-.mknote{font-size:9.5px;color:var(--text3);margin-top:3px}
-
-/* TABLES */
-.tc{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:13px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-table{width:100%;border-collapse:collapse}
-th{background:var(--bg3);color:var(--text3);padding:9px 11px;text-align:left;font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;border-bottom:1px solid var(--border)}
-td{padding:8px 11px;font-size:11.5px;color:var(--text2);border-bottom:1px solid var(--border2)}
-tr:last-child td{border-bottom:none}
-tr:hover td{background:var(--xpale);color:var(--text)}
-.tf td{background:var(--bg3);color:var(--nav);font-weight:700;border-top:2px solid var(--border)!important;border-bottom:none!important}
-.n{text-align:right;font-family:'DM Mono',monospace;font-size:10.5px}
-.up{color:var(--up)!important;font-weight:700}.dn{color:var(--dn)!important;font-weight:700}
-.chip{display:inline-flex;padding:2px 8px;border-radius:4px;font-size:8.5px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
-.ci{background:#E6F4EE;color:#1B5E38;border:1px solid #B8DEC9}
-.cl{background:#EEECFF;color:#3B2FA8;border:1px solid #C5BFFF}
-.cr{background:#FEF5E7;color:#8B5E0A;border:1px solid #F5D596}
-.cp{background:#E0F5F5;color:#0B5C5C;border:1px solid #9EDCDC}
-
-/* RANK BAR */
-.rb{display:flex;align-items:center;gap:7px}
-.rbbg{flex:1;background:var(--bg3);border-radius:3px;height:5px;overflow:hidden}
-.rbf{height:100%;border-radius:3px;background:var(--mid)}
-.rbp{font-size:9px;color:var(--text3);font-family:'DM Mono',monospace;width:32px;text-align:right;flex-shrink:0}
-
-footer{text-align:center;padding:18px;color:var(--text3);font-size:9.5px;border-top:1px solid var(--border);margin-top:14px;background:var(--bg2);letter-spacing:.5px}
+h2{font-size:16px;font-weight:700;color:var(--text);margin-bottom:16px}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.kpi-label{font-size:10px;font-weight:600;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px}
+.kpi-val{font-size:22px;font-weight:800;color:var(--text);line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi-sub{font-size:11px;color:var(--text2);margin-top:4px;font-weight:500}
+.kpi-sub.up{color:var(--up)}
+.kpi-sub.dn{color:var(--dn)}
+.badge{display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:700}
+.badge.up{background:var(--up-bg);color:var(--up)}
+.badge.dn{background:var(--dn-bg);color:var(--dn)}
+.badge.neu{background:#F3F4F6;color:#6B7280}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px}
+.card h3{font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+.chart-wrap{position:relative;height:220px}
+.chart-wrap-lg{position:relative;height:280px}
+/* Tabla */
+.tbl-wrap{overflow-x:auto;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:var(--bg3);color:var(--text2);font-weight:700;padding:8px 10px;text-align:right;font-size:10px;letter-spacing:.4px;text-transform:uppercase;border-bottom:2px solid var(--border)}
+th:first-child{text-align:left}
+td{padding:7px 10px;text-align:right;border-bottom:1px solid var(--border2);color:var(--text)}
+td:first-child{text-align:left;font-weight:600}
+tr:last-child td{font-weight:800;background:var(--xpale)}
+tr:hover td{background:var(--bg4)}
+.ci{display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(46,139,87,.18);border:1.5px solid rgba(46,139,87,.5);margin-right:5px}
+.cl{display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(91,74,200,.18);border:1.5px solid rgba(91,74,200,.5);margin-right:5px}
+.cr{display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(192,124,16,.18);border:1.5px solid rgba(192,124,16,.5);margin-right:5px}
+.cp{display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(11,122,122,.18);border:1.5px solid rgba(11,122,122,.5);margin-right:5px}
+/* Resumen ejecutivo */
+.exec-box{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:10px;padding:16px 20px;margin-bottom:20px}
+.exec-box.purple{border-left-color:var(--pu)}
+.exec-box.amber{border-left-color:var(--am)}
+.exec-box.teal{border-left-color:var(--tl)}
+.exec-title{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.exec-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.exec-item{font-size:12px;color:var(--text2);line-height:1.55;padding-left:14px;border-left:2px solid var(--border)}
+.exec-item strong{color:var(--text);display:block;margin-bottom:1px;font-weight:700;font-size:12px}
+/* Mini-KPI row */
+.mini-kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:18px}
+.mk{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 13px}
+.mk-l{font-size:9.5px;font-weight:600;color:var(--text3);letter-spacing:.5px;text-transform:uppercase}
+.mk-v{font-size:17px;font-weight:800;color:var(--text);margin:3px 0 1px}
+.mk-s{font-size:10px;font-weight:500}
+/* Bar horizontal */
+.bar-pct{height:5px;background:var(--bg3);border-radius:3px;margin-top:5px}
+.bar-pct-fill{height:100%;border-radius:3px;background:var(--primary)}
+/* Comparativo */
+.comp-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border2)}
+.comp-row:last-child{border-bottom:none}
+.comp-lbl{font-size:12px;font-weight:600;color:var(--text);flex:1}
+.comp-val{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;width:100px;text-align:right}
+.comp-diff{font-size:11px;font-weight:700;width:80px;text-align:right}
 </style>
 </head>
 <body>
 
-<nav class="topbar">
+<div class="topbar">
   <div class="logo-area">
-    <svg viewBox="0 0 32 32" fill="none">
-      <rect width="32" height="32" rx="6" fill="#4CAF82"/>
-      <rect x="13.5" y="4" width="5" height="24" rx="2.2" fill="white"/>
-      <rect x="4" y="13.5" width="24" height="5" rx="2.2" fill="white"/>
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="8" fill="rgba(255,255,255,0.12)"/>
+      <path d="M20 8C13.37 8 8 13.37 8 20s5.37 12 12 12 12-5.37 12-12S26.63 8 20 8zm0 4a8 8 0 110 16A8 8 0 0120 12zm0 2a6 6 0 100 12A6 6 0 0020 14z" fill="white" fill-opacity=".9"/>
+      <circle cx="20" cy="20" r="3" fill="white"/>
     </svg>
     <div>
       <div class="brand-name">SERPROEN</div>
-      <div class="brand-sub">Cuidados Clínicos · 1977</div>
+      <div class="brand-sub">Ventas 2026</div>
     </div>
   </div>
   <div class="tabs">
     <button class="tab active" onclick="showTab('resumen',this)">◈ Resumen</button>
-    <button class="tab" onclick="showTab('mensual',this)">⟁ Por mes</button>
-    <button class="tab" onclick="showTab('clientes',this)">◎ Top clientes</button>
-    <button class="tab" onclick="showTab('linea',this)">⊞ Por línea</button>
+    <button class="tab" onclick="showTab('pormes',this)">⟁ Por mes</button>
+    <button class="tab" onclick="showTab('topclientes',this)">◎ Top clientes</button>
+    <button class="tab" onclick="showTab('porlinea',this)">⊞ Por línea</button>
     <button class="tab" onclick="showTab('hcb2b',this)">● Home Care B2B</button>
     <button class="tab" onclick="showTab('psp',this)">● PSP</button>
     <button class="tab" onclick="showTab('residencia',this)">● Residencia</button>
   </div>
-  <div class="nav-pill">Ene–Abr 2026</div>
-</nav>
-
-<!-- ══════════════════════════════════════════
-     RESUMEN
-══════════════════════════════════════════ -->
-<div id="tab-resumen" class="page active">
-  <div class="pg-hd"><div class="pg-title">Dashboard de Ventas 2026</div><div class="pg-sub">Enero · Febrero · Marzo · Abril — Acumulado</div></div>
-
-  <div style="height:16px"></div>
-  <div class="kstrip k6">
-    <div class="kpi">
-      <div class="klbl">Venta acumulada</div>
-      <div class="kval">$2.018M</div>
-      <div class="knote">Ene–Abr 2026</div>
-      <div class="kd up"><svg class="arr" viewBox="0 0 8 8"><path d="M4 1l3 4H1z" fill="currentColor"/></svg>+3.3% vs Budget</div>
-    </div>
-    <div class="kpi tl">
-      <div class="klbl">Budget acum.</div>
-      <div class="kval">$1.953M</div>
-      <div class="kd up"><svg class="arr" viewBox="0 0 8 8"><path d="M4 1l3 4H1z" fill="currentColor"/></svg>Superado +$65.1M</div>
-    </div>
-    <div class="kpi am">
-      <div class="klbl">Venta Enero</div>
-      <div class="kval">$499.9M</div>
-      <div class="kd up"><svg class="arr" viewBox="0 0 8 8"><path d="M4 1l3 4H1z" fill="currentColor"/></svg>+$45.3M vs Bdgt.</div>
-    </div>
-    <div class="kpi am">
-      <div class="klbl">Venta Febrero</div>
-      <div class="kval">$482.5M</div>
-      <div class="kd up"><svg class="arr" viewBox="0 0 8 8"><path d="M4 1l3 4H1z" fill="currentColor"/></svg>+$59.9M vs Bdgt.</div>
-    </div>
-    <div class="kpi am">
-      <div class="klbl">Venta Marzo</div>
-      <div class="kval">$521.2M</div>
-      <div class="kd up"><svg class="arr" viewBox="0 0 8 8"><path d="M4 1l3 4H1z" fill="currentColor"/></svg>+$4.5M vs Bdgt.</div>
-    </div>
-    <div class="kpi rd">
-      <div class="klbl">Venta Abril</div>
-      <div class="kval">$514.1M</div>
-      <div class="kd dn"><svg class="arr" viewBox="0 0 8 8"><path d="M4 7l3-4H1z" fill="currentColor"/></svg>−$44.6M vs Bdgt.</div>
-    </div>
-  </div>
-
-  <div class="exec">
-    <span class="exec-icon">📋</span>
-    <strong>Resumen ejecutivo:</strong> La venta acumulada Ene–Abr alcanza <strong>$2.018M</strong>, superando el budget en +3.3% (+$65.1M). <strong>Home Care B2B</strong> es el área de mayor volumen ($802.9M, 39.8%) y mayor superávit vs budget (+$61.7M, +8.3%). <strong>Residencia</strong> supera levemente budget (+1.2%). En contraste, <strong>PSP</strong> acumula un déficit de −$1.9M (−0.4%) arrastrado por Abril, que cierra −$44.6M bajo budget, siendo el único mes en rojo. <strong>Particulares</strong> presenta el déficit más consistente (−1.0% acumulado). El top 3 de clientes concentra el 40% de la venta total.
-  </div>
-
-  <!-- COMPARATIVO ANUAL -->
-  <div class="sl">📊 Comparativo Venta Acumulada · Ene–Abr 2025 vs 2026</div>
-  <div class="comp4">
-    <div class="cc4">
-      <div class="c4lbl">Venta Ene–Abr 2025</div>
-      <div class="c4val" style="color:var(--text3)">$2.241M</div>
-      <div class="c4note">Referencia año anterior</div>
-    </div>
-    <div class="cc4">
-      <div class="c4lbl">Venta Ene–Abr 2026</div>
-      <div class="c4val" style="color:var(--nav)">$2.018M</div>
-      <div class="c4note">Acumulado actual</div>
-    </div>
-    <div class="cc4">
-      <div class="c4lbl">Variación en monto</div>
-      <div class="c4val" style="color:var(--dn)">−$223M</div>
-      <div class="c4note">2026 vs 2025</div>
-      <div class="badge neg">▼ −$223M</div>
-    </div>
-    <div class="cc4">
-      <div class="c4lbl">Variación porcentual</div>
-      <div class="c4val" style="color:var(--dn)">−9.9%</div>
-      <div class="c4note">Caída vs año anterior</div>
-      <div class="badge neg">▼ −9.9% vs 2025</div>
-    </div>
-  </div>
-
-  <!-- CHARTS -->
-  <div class="g2">
-    <div class="cc"><div class="ct">Composición por área · Acumulado Ene–Abr 2026</div><canvas id="c-donut"></canvas></div>
-    <div class="cc"><div class="ct">Venta vs Budget por área · Acumulado</div><canvas id="c-areabar"></canvas></div>
-  </div>
-  <div class="cc tall"><div class="ct">Evolución mensual por área · CLP millones</div><canvas id="c-evol"></canvas></div>
-
-  <!-- TABLA CONSOLIDADA -->
-  <div class="sl">Cuadro consolidado Ene–Abr 2026</div>
-  <div class="tc"><table>
-    <thead><tr>
-      <th>Área</th>
-      <th class="n">Enero</th><th class="n">Febrero</th><th class="n">Marzo</th><th class="n">Abril</th>
-      <th class="n">Acum.</th><th class="n">Budget Acum.</th>
-      <th class="n">Dif. vs Bdgt.</th><th class="n">% Dif.</th>
-    </tr></thead>
-    <tbody>
-      <tr><td><span class="chip ci">Home Care B2B</span></td>
-        <td class="n">$197.7M</td><td class="n">$177.3M</td><td class="n">$199.7M</td><td class="n">$228.3M</td>
-        <td class="n">$802.9M</td><td class="n">$741.2M</td><td class="n up">+$61.7M</td><td class="n up">+8.3%</td></tr>
-      <tr><td><span class="chip cl">PSP</span></td>
-        <td class="n">$113.8M</td><td class="n">$124.3M</td><td class="n">$136.6M</td><td class="n">$142.8M</td>
-        <td class="n">$517.5M</td><td class="n">$519.5M</td><td class="n dn">−$1.9M</td><td class="n dn">−0.4%</td></tr>
-      <tr><td><span class="chip cr">Residencia</span></td>
-        <td class="n">$155.5M</td><td class="n">$152.4M</td><td class="n">$147.0M</td><td class="n">$110.9M</td>
-        <td class="n">$565.7M</td><td class="n">$559.0M</td><td class="n up">+$6.7M</td><td class="n up">+1.2%</td></tr>
-      <tr><td><span class="chip cp">Particulares</span></td>
-        <td class="n">$33.0M</td><td class="n">$28.5M</td><td class="n">$37.9M</td><td class="n">$32.1M</td>
-        <td class="n">$131.6M</td><td class="n">$133.0M</td><td class="n dn">−$1.4M</td><td class="n dn">−1.0%</td></tr>
-    </tbody>
-    <tfoot><tr class="tf">
-      <td><strong>Total</strong></td>
-      <td class="n">$499.9M</td><td class="n">$482.5M</td><td class="n">$521.2M</td><td class="n">$514.1M</td>
-      <td class="n">$2.018M</td><td class="n">$1.953M</td><td class="n up">+$65.1M</td><td class="n up">+3.3%</td>
-    </tr></tfoot>
-  </table></div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     POR MES
-══════════════════════════════════════════ -->
-<div id="tab-mensual" class="page">
-  <div style="height:16px"></div>
-  <div class="mk4">
-    <div class="mk"><div class="mklbl">Venta Enero</div><div class="mkval">$499.9M</div><div class="mknote" style="color:var(--up)">+$45.3M vs Budget (+10.0%)</div></div>
-    <div class="mk"><div class="mklbl">Venta Febrero</div><div class="mkval">$482.5M</div><div class="mknote" style="color:var(--up)">+$59.9M vs Budget (+14.2%)</div></div>
-    <div class="mk"><div class="mklbl">Venta Marzo</div><div class="mkval">$521.2M</div><div class="mknote" style="color:var(--up)">+$4.5M vs Budget (+0.9%)</div></div>
-    <div class="mk"><div class="mklbl">Venta Abril</div><div class="mkval">$514.1M</div><div class="mknote" style="color:var(--dn)">−$44.6M vs Budget (−8.0%)</div></div>
+<!-- ═══════════════════════ RESUMEN ═══════════════════════ -->
+<div id="resumen" class="page active">
+  <div class="kpi-grid" style="grid-template-columns:repeat(auto-fit,minmax(155px,1fr))">
+    <div class="kpi"><div class="kpi-label">Venta Acumulada</div><div class="kpi-val">$2.018M</div><div class="kpi-sub">Ene–Abr 2026</div></div>
+    <div class="kpi"><div class="kpi-label">Budget Acum.</div><div class="kpi-val">$1.953M</div><div class="kpi-sub">Proyección período</div></div>
+    <div class="kpi"><div class="kpi-label">Dif. vs Budget</div><div class="kpi-val" style="color:var(--up)">+$65.1M</div><div class="kpi-sub up">+3.3% sobre meta</div></div>
+    <div class="kpi"><div class="kpi-label">Mejor Línea</div><div class="kpi-val" style="font-size:15px">HC B2B</div><div class="kpi-sub up">+8.3% vs Budget</div></div>
+    <div class="kpi"><div class="kpi-label">vs 2025 (Ene–Abr)</div><div class="kpi-val">$2.241M</div><div class="kpi-sub dn">−$223M (−9.9%)</div></div>
+    <div class="kpi"><div class="kpi-label">Mejor Mes</div><div class="kpi-val" style="font-size:15px">Marzo</div><div class="kpi-sub">$521.2M acumulado</div></div>
   </div>
 
-  <div class="exec">
-    <span class="exec-icon">📅</span>
-    <strong>Resumen ejecutivo:</strong> Enero, Febrero y Marzo superan su respectivo budget, siendo <strong>Febrero el mes de mayor rendimiento relativo</strong> (+$59.9M, +14.2%). <strong>Abril marca un quiebre</strong>: es el primer mes en rojo vs budget (−$44.6M, −8.0%), explicado principalmente por la caída de <strong>Residencia</strong> que baja de $147M a $110.9M (−25% respecto a Marzo) y por <strong>PSP</strong> que queda −$33.9M bajo su budget mensual. <strong>Home Care B2B</strong> sube con fuerza en Abril (+$228.3M, el mejor mes del área). <strong>Particulares</strong> es el área más estable, oscilando entre $28M y $38M sin grandes variaciones.
+  <div class="exec-box">
+    <div class="exec-title">📋 Resumen Ejecutivo — Ene–Abr 2026</div>
+    <div class="exec-body">
+      <div class="exec-item"><strong>Resultado global positivo</strong>Ventas acumuladas de $2.018M superan el Budget en +$65.1M (+3.3%). El desempeño es sólido considerando la variación negativa vs. 2025 (−9.9%).</div>
+      <div class="exec-item"><strong>Home Care B2B, motor del período</strong>Única línea con superávit relevante: +$61.7M (+8.3%). MUTUAL Santiago y ESACHS explican el 80% del volumen del área.</div>
+      <div class="exec-item"><strong>Abril muestra desaceleración</strong>Primer mes bajo $520M con $514.1M. Residencia cae −$36.1M vs Marzo. Se requiere seguimiento en Q2.</div>
+      <div class="exec-item"><strong>PSP y Particulares bajo Budget</strong>PSP −$1.9M (−0.4%) y Particulares −$1.4M (−1.0%). Brechas contenidas pero con tendencia a monitorear.</div>
+    </div>
   </div>
 
-  <div class="cc tall"><div class="ct">Venta por área · Enero a Abril 2026 (CLP millones)</div><canvas id="c-mensual"></canvas></div>
+  <div class="grid2">
+    <div class="card"><h3>Composición por línea (Acum.)</h3><div class="chart-wrap"><canvas id="donut"></canvas></div></div>
+    <div class="card"><h3>Venta vs Budget por línea</h3><div class="chart-wrap"><canvas id="barlinea"></canvas></div></div>
+  </div>
+  <div class="card" style="margin-bottom:20px"><h3>Evolución mensual por línea</h3><div class="chart-wrap-lg"><canvas id="lineas"></canvas></div></div>
 
-  <div class="sl">Desglose mensual por área</div>
-  <div class="tc"><table>
-    <thead><tr>
-      <th>Área</th>
-      <th class="n">Venta Ene</th><th class="n">Bdgt.Ene</th><th class="n">Dif.</th>
-      <th class="n">Venta Feb</th><th class="n">Bdgt.Feb</th><th class="n">Dif.</th>
-      <th class="n">Venta Mar</th><th class="n">Bdgt.Mar</th><th class="n">Dif.</th>
-      <th class="n">Venta Abr</th><th class="n">Bdgt.Abr</th><th class="n">Dif.</th>
-      <th class="n">Acumulado</th>
-    </tr></thead>
-    <tbody>
-      <tr><td><span class="chip ci">HC B2B</span></td>
-        <td class="n">$197.7M</td><td class="n">$187.8M</td><td class="n up">+$9.9M</td>
-        <td class="n">$177.3M</td><td class="n">$172.8M</td><td class="n up">+$4.5M</td>
-        <td class="n">$199.7M</td><td class="n">$187.8M</td><td class="n up">+$12.0M</td>
-        <td class="n">$228.3M</td><td class="n">$193.0M</td><td class="n up">+$35.3M</td>
-        <td class="n">$802.9M</td></tr>
-      <tr><td><span class="chip cl">PSP</span></td>
-        <td class="n">$113.8M</td><td class="n">$102.9M</td><td class="n up">+$10.9M</td>
-        <td class="n">$124.3M</td><td class="n">$90.9M</td><td class="n up">+$33.4M</td>
-        <td class="n">$136.6M</td><td class="n">$149.0M</td><td class="n dn">−$12.4M</td>
-        <td class="n">$142.8M</td><td class="n">$176.7M</td><td class="n dn">−$33.9M</td>
-        <td class="n">$517.5M</td></tr>
-      <tr><td><span class="chip cr">Residencia</span></td>
-        <td class="n">$155.5M</td><td class="n">$129.5M</td><td class="n up">+$26.0M</td>
-        <td class="n">$152.4M</td><td class="n">$129.5M</td><td class="n up">+$22.9M</td>
-        <td class="n">$147.0M</td><td class="n">$145.5M</td><td class="n up">+$1.5M</td>
-        <td class="n">$110.9M</td><td class="n">$154.5M</td><td class="n dn">−$43.6M</td>
-        <td class="n">$565.7M</td></tr>
-      <tr><td><span class="chip cp">Particulares</span></td>
-        <td class="n">$33.0M</td><td class="n">$34.5M</td><td class="n dn">−$1.5M</td>
-        <td class="n">$28.5M</td><td class="n">$29.5M</td><td class="n dn">−$1.0M</td>
-        <td class="n">$37.9M</td><td class="n">$34.5M</td><td class="n up">+$3.4M</td>
-        <td class="n">$32.1M</td><td class="n">$34.5M</td><td class="n dn">−$2.4M</td>
-        <td class="n">$131.6M</td></tr>
-    </tbody>
-    <tfoot><tr class="tf">
-      <td><strong>Total</strong></td>
-      <td class="n">$499.9M</td><td class="n">$454.6M</td><td class="n up">+$45.3M</td>
-      <td class="n">$482.5M</td><td class="n">$422.6M</td><td class="n up">+$59.9M</td>
-      <td class="n">$521.2M</td><td class="n">$516.8M</td><td class="n up">+$4.5M</td>
-      <td class="n">$514.1M</td><td class="n">$558.7M</td><td class="n dn">−$44.6M</td>
-      <td class="n">$2.018M</td>
-    </tr></tfoot>
-  </table></div>
+  <!-- Tabla comparativo -->
+  <div class="card">
+    <h3>Consolidado por línea — Ene–Abr 2026</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Línea</th><th>Enero</th><th>Febrero</th><th>Marzo</th><th>Abril</th><th>Acumulado</th><th>Budget Acum.</th><th>Dif.</th><th>%</th></tr></thead>
+        <tbody>
+          <tr><td><span class="ci"></span>Home Care B2B</td><td>$197.7M</td><td>$177.3M</td><td>$199.7M</td><td>$228.3M</td><td>$802.9M</td><td>$741.2M</td><td style="color:var(--up)">+$61.7M</td><td><span class="badge up">+8.3%</span></td></tr>
+          <tr><td><span class="cl"></span>PSP</td><td>$113.8M</td><td>$124.3M</td><td>$136.6M</td><td>$142.8M</td><td>$517.5M</td><td>$519.5M</td><td style="color:var(--dn)">−$1.9M</td><td><span class="badge dn">−0.4%</span></td></tr>
+          <tr><td><span class="cr"></span>Residencia</td><td>$155.5M</td><td>$152.4M</td><td>$147.0M</td><td>$110.9M</td><td>$565.7M</td><td>$559.0M</td><td style="color:var(--up)">+$6.7M</td><td><span class="badge up">+1.2%</span></td></tr>
+          <tr><td><span class="cp"></span>Particulares</td><td>$33.0M</td><td>$28.5M</td><td>$37.9M</td><td>$32.1M</td><td>$131.6M</td><td>$133.0M</td><td style="color:var(--dn)">−$1.4M</td><td><span class="badge dn">−1.0%</span></td></tr>
+          <tr><td>Total</td><td>$499.9M</td><td>$482.5M</td><td>$521.2M</td><td>$514.1M</td><td>$2.018M</td><td>$1.953M</td><td style="color:var(--up)">+$65.1M</td><td><span class="badge up">+3.3%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Comparativo 2025 -->
+  <div class="card" style="margin-top:16px">
+    <h3>Comparativo Ene–Abr 2025 vs 2026</h3>
+    <div class="comp-row"><div class="comp-lbl">2025 (referencia)</div><div class="comp-val">$2.241M</div><div class="comp-diff" style="color:var(--text3)">—</div></div>
+    <div class="comp-row"><div class="comp-lbl">2026 (actual)</div><div class="comp-val">$2.018M</div><div class="comp-diff dn" style="color:var(--dn)">−$223M</div></div>
+    <div class="comp-row"><div class="comp-lbl">Variación anual</div><div class="comp-val"><span class="badge dn">−9.9%</span></div><div class="comp-diff"></div></div>
+  </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     TOP CLIENTES
-══════════════════════════════════════════ -->
-<div id="tab-clientes" class="page">
-  <div style="height:16px"></div>
-  <div class="mk4">
-    <div class="mk"><div class="mklbl">Top cliente</div><div class="mkval" style="font-size:14px;font-family:'Plus Jakarta Sans'">MUTUAL Stgo.</div><div class="mknote">$411.4M acumulado · 20.4%</div></div>
-    <div class="mk"><div class="mklbl">Concentración top 3</div><div class="mkval">40%</div><div class="mknote">Del total vendido</div></div>
-    <div class="mk"><div class="mklbl">Concentración top 5</div><div class="mkval">59%</div><div class="mknote">Del total vendido</div></div>
-    <div class="mk"><div class="mklbl">Concentración top 10</div><div class="mkval">80%</div><div class="mknote">Del total vendido</div></div>
+<!-- ═══════════════════════ POR MES ═══════════════════════ -->
+<div id="pormes" class="page">
+  <div class="mini-kpi-row">
+    <div class="mk"><div class="mk-l">Enero</div><div class="mk-v">$499.9M</div><div class="mk-s" style="color:var(--text3)">—</div></div>
+    <div class="mk"><div class="mk-l">Febrero</div><div class="mk-v">$482.5M</div><div class="mk-s" style="color:var(--dn)">−$17.4M vs Ene</div></div>
+    <div class="mk"><div class="mk-l">Marzo</div><div class="mk-v">$521.2M</div><div class="mk-s" style="color:var(--up)">+$38.7M vs Feb</div></div>
+    <div class="mk"><div class="mk-l">Abril</div><div class="mk-v">$514.1M</div><div class="mk-s" style="color:var(--dn)">−$7.1M vs Mar</div></div>
   </div>
 
-  <div class="exec">
-    <span class="exec-icon">🏆</span>
-    <strong>Resumen ejecutivo:</strong> <strong>MUTUAL Santiago</strong> domina con $411.4M (20.4% del total), superando su budget en +17.5% (+$61.4M). Los hospitales de Residencia — <strong>Sótero del Río</strong> ($207.2M) y <strong>San Juan de Dios</strong> ($199.2M) — representan juntos el 20.1% de la venta. Destaca <strong>SANOFI</strong> como el cliente PSP más rentable (+28.5% vs budget). La caída del <strong>Hosp. Sótero del Río en Abril</strong> ($16.1M vs $63.7M promedio) es la principal alerta del período. El alto grado de concentración (top 3 = 40%) evidencia dependencia estratégica en pocos clientes clave.
+  <div class="exec-box">
+    <div class="exec-title">📋 Resumen Ejecutivo — Evolución Mensual</div>
+    <div class="exec-body">
+      <div class="exec-item"><strong>Enero — Arranque sólido</strong>$499.9M de apertura en línea con el ritmo presupuestado. HC B2B concentra el 39.5% del mes con $197.7M.</div>
+      <div class="exec-item"><strong>Febrero — Leve contracción</strong>Caída de $17.4M (−3.5%) liderada por HC B2B (−$20.4M). PSP y Residencia mantienen niveles estables.</div>
+      <div class="exec-item"><strong>Marzo — Pico del período</strong>Mejor mes con $521.2M (+8.0% vs Febrero). PSP alcanza su máximo de $136.6M. Todas las líneas con crecimiento.</div>
+      <div class="exec-item"><strong>Abril — Desaceleración moderada</strong>−$7.1M vs Marzo. Residencia explica la caída (−$36.1M), compensada parcialmente por HC B2B (+$28.6M) que marca su máximo mensual.</div>
+    </div>
   </div>
 
-  <div class="cc tall"><div class="ct">Top 10 clientes · Venta acumulada Ene–Abr (CLP millones)</div><canvas id="c-top10"></canvas></div>
-  <div class="sl">Detalle top clientes</div>
-  <div class="tc"><table>
-    <thead><tr><th>#</th><th>Cliente</th><th>Área</th>
-      <th class="n">Ene</th><th class="n">Feb</th><th class="n">Mar</th><th class="n">Abr</th>
-      <th class="n">Acumulado</th><th class="n">% Total</th>
-      <th style="min-width:100px">Participación</th>
-    </tr></thead>
-    <tbody id="top-tbody"></tbody>
-  </table></div>
+  <div class="card" style="margin-bottom:16px"><h3>Venta mensual por línea</h3><div class="chart-wrap-lg"><canvas id="mes-barras"></canvas></div></div>
+
+  <div class="card">
+    <h3>Desglose mensual</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Línea</th><th>Enero</th><th>Febrero</th><th>Marzo</th><th>Abril</th><th>Acumulado</th></tr></thead>
+        <tbody>
+          <tr><td><span class="ci"></span>Home Care B2B</td><td>$197.7M</td><td>$177.3M</td><td>$199.7M</td><td>$228.3M</td><td>$802.9M</td></tr>
+          <tr><td><span class="cl"></span>PSP</td><td>$113.8M</td><td>$124.3M</td><td>$136.6M</td><td>$142.8M</td><td>$517.5M</td></tr>
+          <tr><td><span class="cr"></span>Residencia</td><td>$155.5M</td><td>$152.4M</td><td>$147.0M</td><td>$110.9M</td><td>$565.7M</td></tr>
+          <tr><td><span class="cp"></span>Particulares</td><td>$33.0M</td><td>$28.5M</td><td>$37.9M</td><td>$32.1M</td><td>$131.6M</td></tr>
+          <tr><td>Total</td><td>$499.9M</td><td>$482.5M</td><td>$521.2M</td><td>$514.1M</td><td>$2.018M</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     POR LÍNEA
-══════════════════════════════════════════ -->
-<div id="tab-linea" class="page">
-  <div style="height:16px"></div>
-  <div class="mk4">
-    <div class="mk"><div class="mklbl">Mayor volumen</div><div class="mkval" style="font-size:14px;font-family:'Plus Jakarta Sans'">HC B2B</div><div class="mknote">$802.9M · 39.8% del total</div></div>
-    <div class="mk"><div class="mklbl">Mayor superávit</div><div class="mkval" style="font-size:14px;font-family:'Plus Jakarta Sans'">HC B2B</div><div class="mknote">+$61.7M vs budget (+8.3%)</div></div>
-    <div class="mk"><div class="mklbl">Mayor crecimiento</div><div class="mkval" style="font-size:14px;font-family:'Plus Jakarta Sans'">PSP</div><div class="mknote">Ene $113.8M → Abr $142.8M</div></div>
-    <div class="mk"><div class="mklbl">Bajo budget acum.</div><div class="mkval" style="font-size:14px;font-family:'Plus Jakarta Sans'">PSP · Part.</div><div class="mknote">−$1.9M y −$1.4M resp.</div></div>
+<!-- ═══════════════════════ TOP CLIENTES ═══════════════════════ -->
+<div id="topclientes" class="page">
+  <div class="mini-kpi-row">
+    <div class="mk"><div class="mk-l">Mayor Cliente</div><div class="mk-v" style="font-size:13px">MUTUAL Stgo</div><div class="mk-s" style="color:var(--up)">$411.4M acum.</div></div>
+    <div class="mk"><div class="mk-l">2° Cliente</div><div class="mk-v" style="font-size:13px">Sótero del Río</div><div class="mk-s">$207.2M acum.</div></div>
+    <div class="mk"><div class="mk-l">Top 3 concentran</div><div class="mk-v">52%</div><div class="mk-s">del total ventas</div></div>
+    <div class="mk"><div class="mk-l">Clientes activos</div><div class="mk-v">20+</div><div class="mk-s">en el período</div></div>
   </div>
 
-  <div class="exec">
-    <span class="exec-icon">📊</span>
-    <strong>Resumen ejecutivo:</strong> <strong>Home Care B2B</strong> lidera en volumen ($802.9M) y en superávit vs budget (+$61.7M, +8.3%), impulsado por el fuerte Abril de MUTUAL Santiago. <strong>Residencia</strong> supera levemente budget (+1.2%) pero muestra una caída pronunciada en Abril (−25% vs Marzo), principalmente por Hosp. Sótero del Río. <strong>PSP</strong> tiene un comportamiento mixto: aceleración de Enero a Abril, pero con budgets crecientes que lo dejan ligeramente en rojo acumulado (−0.4%). <strong>Particulares</strong> es el área de menor volumen y se mantiene marginalmente bajo budget (−1.0%); requiere atención en captación de nuevos clientes Viña donde cae consistentemente.
+  <div class="exec-box">
+    <div class="exec-title">📋 Resumen Ejecutivo — Top Clientes</div>
+    <div class="exec-body">
+      <div class="exec-item"><strong>Alta concentración en MUTUAL Santiago</strong>Aporta $411.4M (20.4% del total). Su comportamiento en Abril con crecimiento sostenido es clave para el resultado de HC B2B.</div>
+      <div class="exec-item"><strong>Sótero del Río y San Juan de Dios anclan Residencia</strong>Con $207.2M y $199.2M respectivamente, representan el 71.9% de la línea. La caída de Residencia en Abril se asocia a ambos clientes.</div>
+      <div class="exec-item"><strong>SANOFI lidera PSP</strong>$201.4M acumulados, con PFIZER DE CHILE ($120.9M) como segundo. Juntos explican el 62.3% del área PSP.</div>
+      <div class="exec-item"><strong>Nuevo cliente en Abril</strong>Univ. Las Américas ingresa en Residencia con $4.6M. Oportunidad de crecimiento a desarrollar en Q2.</div>
+    </div>
   </div>
 
-  <div class="g2">
-    <div class="cc"><div class="ct">Venta acumulada por área · Ene–Abr</div><canvas id="c-linea1"></canvas></div>
-    <div class="cc"><div class="ct">Venta vs Budget acumulado por área</div><canvas id="c-linea2"></canvas></div>
+  <div class="card" style="margin-bottom:16px"><h3>Top 10 clientes — Venta acumulada</h3><div style="position:relative;height:320px"><canvas id="top10"></canvas></div></div>
+
+  <div class="card">
+    <h3>Clientes por área</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Cliente</th><th>Línea</th><th>Acumulado</th><th>Part. %</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>MUTUAL Santiago</td><td><span class="badge neu">HC B2B</span></td><td>$411.4M</td><td>20.4%</td><td><div class="bar-pct"><div class="bar-pct-fill" style="width:100%;background:#2E8B57"></div></div></td></tr>
+          <tr><td>H. Sótero del Río</td><td><span class="badge neu">Resid.</span></td><td>$207.2M</td><td>10.3%</td><td><div class="bar-pct"><div class="bar-pct-fill" style="width:50%;background:#C07C10"></div></div></td></tr>
+          <tr><td>H. San Juan de Dios</td><td><span class="badge neu">Resid.</span></td><td>$199.2M</td><td>9.9%</td><td><div class="bar-pct"><div class="bar-pct-fill" style="width:48%;background:#C07C10"></div></div></td></tr>
+          <tr><td>SANOFI</td><td><span class="badge neu">PSP</span></td><td>$201.4M</td><td>10.0%</td><td><div class="bar-pct"><div class="bar-pct-fill" style="width:49%;background:#5B4AC8"></div></div></td></tr>
+          <tr><td>ESACHS</td><td><span class="badge neu">HC B2B</span></td><td>$233.9M</td><td>11.6%</td><td><div class="bar-pct"><div class="bar-pct-fill" style="width:57%;background:#2E8B57"></div></div></td></tr>
+          <tr><td>PFIZER DE CHILE</td><td><span class="badge neu">PSP</span></td><td>$120.9M</td><td>6.0%</td><td><div class="bar-pct"><div class="bar-pct-fill" style="width:29%;background:#5B4AC8"></div></div></td></tr>
+          <tr><td>MUTUAL Viña</td><td><span class="badge neu">HC B2B</span></td><td>$120.8M</td><td>6.0%</td><td><div class="bar-pct"><div class="bar-pct-fill" style="width:29%;background:#2E8B57"></div></div></td></tr>
+          <tr><td>HC Stgo. Particulares</td><td><span class="badge neu">Part.</span></td><td>$118.2M</td><td>5.9%</td><td><div class="bar-pct"><div class="bar-pct-fill" style="width:29%;background:#0B7A7A"></div></div></td></tr>
+          <tr><td>Residencia AM (Part.)</td><td><span class="badge neu">Resid.</span></td><td>$95.1M</td><td>4.7%</td><td><div class="bar-pct"><div class="bar-pct-fill" style="width:23%;background:#C07C10"></div></div></td></tr>
+          <tr><td>PTC</td><td><span class="badge neu">PSP</span></td><td>$67.7M</td><td>3.4%</td><td><div class="bar-pct"><div class="bar-pct-fill" style="width:16%;background:#5B4AC8"></div></div></td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="sl">Detalle por línea de negocio</div>
-  <div class="tc"><table>
-    <thead><tr><th>Área</th>
-      <th class="n">Enero</th><th class="n">Febrero</th><th class="n">Marzo</th><th class="n">Abril</th>
-      <th class="n">Acum.</th><th class="n">Budget Acum.</th>
-      <th class="n">Dif. vs Bdgt.</th><th class="n">% Dif.</th><th class="n">% Total</th>
-    </tr></thead>
-    <tbody>
-      <tr><td><span class="chip ci">Home Care B2B</span></td>
-        <td class="n">$197.7M</td><td class="n">$177.3M</td><td class="n">$199.7M</td><td class="n">$228.3M</td>
-        <td class="n">$802.9M</td><td class="n">$741.2M</td><td class="n up">+$61.7M</td><td class="n up">+8.3%</td><td class="n">39.8%</td></tr>
-      <tr><td><span class="chip cl">PSP</span></td>
-        <td class="n">$113.8M</td><td class="n">$124.3M</td><td class="n">$136.6M</td><td class="n">$142.8M</td>
-        <td class="n">$517.5M</td><td class="n">$519.5M</td><td class="n dn">−$1.9M</td><td class="n dn">−0.4%</td><td class="n">25.6%</td></tr>
-      <tr><td><span class="chip cr">Residencia</span></td>
-        <td class="n">$155.5M</td><td class="n">$152.4M</td><td class="n">$147.0M</td><td class="n">$110.9M</td>
-        <td class="n">$565.7M</td><td class="n">$559.0M</td><td class="n up">+$6.7M</td><td class="n up">+1.2%</td><td class="n">28.0%</td></tr>
-      <tr><td><span class="chip cp">Particulares</span></td>
-        <td class="n">$33.0M</td><td class="n">$28.5M</td><td class="n">$37.9M</td><td class="n">$32.1M</td>
-        <td class="n">$131.6M</td><td class="n">$133.0M</td><td class="n dn">−$1.4M</td><td class="n dn">−1.0%</td><td class="n">6.5%</td></tr>
-    </tbody>
-    <tfoot><tr class="tf">
-      <td><strong>Total</strong></td>
-      <td class="n">$499.9M</td><td class="n">$482.5M</td><td class="n">$521.2M</td><td class="n">$514.1M</td>
-      <td class="n">$2.018M</td><td class="n">$1.953M</td><td class="n up">+$65.1M</td><td class="n up">+3.3%</td><td class="n">100%</td>
-    </tr></tfoot>
-  </table></div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     HOME CARE B2B
-══════════════════════════════════════════ -->
-<div id="tab-hcb2b" class="page">
-  <div style="height:16px"></div>
-  <div class="kstrip k4">
-    <div class="kpi"><div class="klbl">Venta Acumulada</div><div class="kval">$802.9M</div><div class="knote">Ene–Abr 2026</div></div>
-    <div class="kpi tl"><div class="klbl">Budget Acumulado</div><div class="kval">$741.2M</div></div>
-    <div class="kpi"><div class="klbl">Dif. vs Budget</div><div class="kval">+$61.7M</div><div class="kd up"><svg class="arr" viewBox="0 0 8 8"><path d="M4 1l3 4H1z" fill="currentColor"/></svg>+8.3%</div></div>
-    <div class="kpi am"><div class="klbl">Venta Abril</div><div class="kval">$228.3M</div><div class="kd up"><svg class="arr" viewBox="0 0 8 8"><path d="M4 1l3 4H1z" fill="currentColor"/></svg>Mejor mes del área</div></div>
+<!-- ═══════════════════════ POR LÍNEA ═══════════════════════ -->
+<div id="porlinea" class="page">
+  <div class="mini-kpi-row">
+    <div class="mk"><div class="mk-l">HC B2B</div><div class="mk-v">$802.9M</div><div class="mk-s" style="color:var(--up)">+8.3% vs Bdgt</div></div>
+    <div class="mk"><div class="mk-l">PSP</div><div class="mk-v">$517.5M</div><div class="mk-s" style="color:var(--dn)">−0.4% vs Bdgt</div></div>
+    <div class="mk"><div class="mk-l">Residencia</div><div class="mk-v">$565.7M</div><div class="mk-s" style="color:var(--up)">+1.2% vs Bdgt</div></div>
+    <div class="mk"><div class="mk-l">Particulares</div><div class="mk-v">$131.6M</div><div class="mk-s" style="color:var(--dn)">−1.0% vs Bdgt</div></div>
   </div>
-  <div class="cc tall"><div class="ct">Venta mensual por cliente — Home Care B2B</div><canvas id="c-hcb2b"></canvas></div>
-  <div class="sl">Detalle por cliente</div>
-  <div class="tc"><table>
-    <thead><tr><th>#</th><th>Cliente</th>
-      <th class="n">Ene</th><th class="n">Feb</th><th class="n">Mar</th><th class="n">Abr</th>
-      <th class="n">Acumulado</th><th class="n">Budget Acum.</th>
-      <th class="n">Dif. vs Bdgt.</th><th class="n">% Dif.</th><th class="n">% Área</th>
-    </tr></thead>
-    <tbody>
-      <tr><td>1</td><td>MUTUAL Santiago</td><td class="n">$101.9M</td><td class="n">$87.9M</td><td class="n">$113.4M</td><td class="n">$108.2M</td><td class="n">$411.4M</td><td class="n">$350.0M</td><td class="n up">+$61.4M</td><td class="n up">+17.5%</td><td class="n">51.2%</td></tr>
-      <tr><td>2</td><td>ESACHS</td><td class="n">$60.1M</td><td class="n">$58.5M</td><td class="n">$53.9M</td><td class="n">$61.5M</td><td class="n">$233.9M</td><td class="n">$240.0M</td><td class="n dn">−$6.1M</td><td class="n dn">−2.5%</td><td class="n">29.1%</td></tr>
-      <tr><td>3</td><td>MUTUAL Viña</td><td class="n">$30.6M</td><td class="n">$25.9M</td><td class="n">$28.5M</td><td class="n">$35.8M</td><td class="n">$120.8M</td><td class="n">$127.0M</td><td class="n dn">−$6.2M</td><td class="n dn">−4.9%</td><td class="n">15.0%</td></tr>
-      <tr><td>4</td><td>OPERATIVOS</td><td class="n">$0.0M</td><td class="n">$0.0M</td><td class="n">$0.0M</td><td class="n">$18.8M</td><td class="n">$18.8M</td><td class="n">$5.0M</td><td class="n up">+$13.8M</td><td class="n up">+275.3%</td><td class="n">2.3%</td></tr>
-      <tr><td>5</td><td>Serv.Aux. PFIZER</td><td class="n">$4.0M</td><td class="n">$4.0M</td><td class="n">$4.0M</td><td class="n">$4.0M</td><td class="n">$16.0M</td><td class="n">$16.0M</td><td class="n">+$0.0M</td><td class="n">+0.1%</td><td class="n">2.0%</td></tr>
-      <tr><td>6</td><td>MEGASALUD</td><td class="n">$1.0M</td><td class="n">$1.0M</td><td class="n">$0.0M</td><td class="n">$0.0M</td><td class="n">$2.1M</td><td class="n">$0.0M</td><td class="n up">+$2.1M</td><td class="n">—</td><td class="n">0.3%</td></tr>
-    </tbody>
-    <tfoot><tr class="tf"><td></td><td><strong>Total HC B2B</strong></td><td class="n">$197.7M</td><td class="n">$177.3M</td><td class="n">$199.7M</td><td class="n">$228.3M</td><td class="n">$802.9M</td><td class="n">$741.2M</td><td class="n up">+$61.7M</td><td class="n up">+8.3%</td><td class="n">100%</td></tr></tfoot>
-  </table></div>
+
+  <div class="exec-box">
+    <div class="exec-title">📋 Resumen Ejecutivo — Por Línea</div>
+    <div class="exec-body">
+      <div class="exec-item"><strong>HC B2B supera ampliamente el Budget</strong>+$61.7M sobre meta con crecimiento mensual sostenido: de $177.3M en Febrero a $228.3M en Abril. Lidera el período con holgura.</div>
+      <div class="exec-item"><strong>PSP con leve déficit, pero creciente</strong>−$1.9M (−0.4%) sobre Budget acumulado. Sin embargo, la línea muestra tendencia ascendente mes a mes: de $113.8M en Enero a $142.8M en Abril (+25.5%).</div>
+      <div class="exec-item"><strong>Residencia positiva pero en riesgo</strong>+$6.7M (+1.2%) acumulado, pero con caída pronunciada en Abril (−$36.1M). La tendencia decreciente desde Enero merece atención en Q2.</div>
+      <div class="exec-item"><strong>Particulares dentro de rango</strong>Brecha de −$1.4M (−1.0%) sobre Budget, considerada marginal. Volatilidad mensual entre $28.5M y $37.9M sin tendencia definida.</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card"><h3>Venta acumulada por línea</h3><div class="chart-wrap"><canvas id="linea-acum"></canvas></div></div>
+    <div class="card"><h3>Venta vs Budget por línea</h3><div class="chart-wrap"><canvas id="linea-budget"></canvas></div></div>
+  </div>
+
+  <div class="card">
+    <h3>Detalle por línea</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Línea</th><th>Acumulado</th><th>Budget Acum.</th><th>Diferencia</th><th>% vs Bdgt</th></tr></thead>
+        <tbody>
+          <tr><td><span class="ci"></span>Home Care B2B</td><td>$802.9M</td><td>$741.2M</td><td style="color:var(--up)">+$61.7M</td><td><span class="badge up">+8.3%</span></td></tr>
+          <tr><td><span class="cl"></span>PSP</td><td>$517.5M</td><td>$519.5M</td><td style="color:var(--dn)">−$1.9M</td><td><span class="badge dn">−0.4%</span></td></tr>
+          <tr><td><span class="cr"></span>Residencia</td><td>$565.7M</td><td>$559.0M</td><td style="color:var(--up)">+$6.7M</td><td><span class="badge up">+1.2%</span></td></tr>
+          <tr><td><span class="cp"></span>Particulares</td><td>$131.6M</td><td>$133.0M</td><td style="color:var(--dn)">−$1.4M</td><td><span class="badge dn">−1.0%</span></td></tr>
+          <tr><td>Total</td><td>$2.018M</td><td>$1.953M</td><td style="color:var(--up)">+$65.1M</td><td><span class="badge up">+3.3%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     PSP
-══════════════════════════════════════════ -->
-<div id="tab-psp" class="page">
-  <div style="height:16px"></div>
-  <div class="kstrip k4">
-    <div class="kpi pu"><div class="klbl">Venta Acumulada</div><div class="kval">$517.5M</div><div class="knote">Ene–Abr 2026</div></div>
-    <div class="kpi tl"><div class="klbl">Budget Acumulado</div><div class="kval">$519.5M</div></div>
-    <div class="kpi rd"><div class="klbl">Dif. vs Budget</div><div class="kval">−$1.9M</div><div class="kd dn"><svg class="arr" viewBox="0 0 8 8"><path d="M4 7l3-4H1z" fill="currentColor"/></svg>−0.4%</div></div>
-    <div class="kpi am"><div class="klbl">Venta Abril</div><div class="kval">$142.8M</div><div class="kd dn"><svg class="arr" viewBox="0 0 8 8"><path d="M4 7l3-4H1z" fill="currentColor"/></svg>−$33.9M vs Bdgt.</div></div>
+<!-- ═══════════════════════ HOME CARE B2B ═══════════════════════ -->
+<div id="hcb2b" class="page">
+  <div class="mini-kpi-row">
+    <div class="mk"><div class="mk-l">Venta Acum.</div><div class="mk-v">$802.9M</div><div class="mk-s" style="color:var(--up)">+8.3% vs Bdgt</div></div>
+    <div class="mk"><div class="mk-l">Budget Acum.</div><div class="mk-v">$741.2M</div><div class="mk-s">Proyección</div></div>
+    <div class="mk"><div class="mk-l">Dif. vs Budget</div><div class="mk-v" style="color:var(--up)">+$61.7M</div><div class="mk-s up">Superávit</div></div>
+    <div class="mk"><div class="mk-l">Mejor Mes</div><div class="mk-v" style="font-size:14px">Abril</div><div class="mk-s" style="color:var(--up)">$228.3M</div></div>
   </div>
-  <div class="cc tall"><div class="ct">Venta mensual por cliente — PSP</div><canvas id="c-psp"></canvas></div>
-  <div class="sl">Detalle por cliente</div>
-  <div class="tc"><table>
-    <thead><tr><th>#</th><th>Cliente</th>
-      <th class="n">Ene</th><th class="n">Feb</th><th class="n">Mar</th><th class="n">Abr</th>
-      <th class="n">Acumulado</th><th class="n">Budget Acum.</th>
-      <th class="n">Dif. vs Bdgt.</th><th class="n">% Dif.</th><th class="n">% Área</th>
-    </tr></thead>
-    <tbody>
-      <tr><td>1</td><td>SANOFI</td><td class="n">$44.7M</td><td class="n">$54.4M</td><td class="n">$52.0M</td><td class="n">$50.3M</td><td class="n">$201.4M</td><td class="n">$156.7M</td><td class="n up">+$44.6M</td><td class="n up">+28.5%</td><td class="n">38.9%</td></tr>
-      <tr><td>2</td><td>PFIZER DE CHILE</td><td class="n">$32.7M</td><td class="n">$28.7M</td><td class="n">$28.1M</td><td class="n">$31.3M</td><td class="n">$120.9M</td><td class="n">$104.0M</td><td class="n up">+$16.9M</td><td class="n up">+16.3%</td><td class="n">23.4%</td></tr>
-      <tr><td>3</td><td>PTC</td><td class="n">$18.0M</td><td class="n">$16.4M</td><td class="n">$17.3M</td><td class="n">$16.0M</td><td class="n">$67.7M</td><td class="n">$59.8M</td><td class="n up">+$7.9M</td><td class="n up">+13.2%</td><td class="n">13.1%</td></tr>
-      <tr><td>4</td><td>ASTRAZENECA</td><td class="n">$9.8M</td><td class="n">$8.8M</td><td class="n">$12.9M</td><td class="n">$21.1M</td><td class="n">$52.5M</td><td class="n">$46.0M</td><td class="n up">+$6.5M</td><td class="n up">+14.0%</td><td class="n">10.1%</td></tr>
-      <tr><td>5</td><td>BIOMARIN CHILE</td><td class="n">$4.3M</td><td class="n">$7.0M</td><td class="n">$9.8M</td><td class="n">$6.1M</td><td class="n">$27.1M</td><td class="n">$24.8M</td><td class="n up">+$2.4M</td><td class="n up">+9.5%</td><td class="n">5.2%</td></tr>
-      <tr><td>6</td><td>LINDE GAS CHILE</td><td class="n">$2.3M</td><td class="n">$3.7M</td><td class="n">$4.5M</td><td class="n">$4.5M</td><td class="n">$15.0M</td><td class="n">$14.9M</td><td class="n up">+$0.1M</td><td class="n up">+0.8%</td><td class="n">2.9%</td></tr>
-      <tr><td>7</td><td>FARMAHUB</td><td class="n">$0.0M</td><td class="n">$0.0M</td><td class="n">$5.7M</td><td class="n">$5.8M</td><td class="n">$11.5M</td><td class="n">$16.1M</td><td class="n dn">−$4.6M</td><td class="n dn">−28.4%</td><td class="n">2.2%</td></tr>
-      <tr><td>8</td><td>MERCK</td><td class="n">−$0.8M</td><td class="n">$2.5M</td><td class="n">$3.8M</td><td class="n">$4.8M</td><td class="n">$10.3M</td><td class="n">$11.7M</td><td class="n dn">−$1.4M</td><td class="n dn">−11.8%</td><td class="n">2.0%</td></tr>
-      <tr><td>9</td><td>COLMENA</td><td class="n">$1.8M</td><td class="n">$1.4M</td><td class="n">$1.8M</td><td class="n">$2.2M</td><td class="n">$7.2M</td><td class="n">$5.5M</td><td class="n up">+$1.7M</td><td class="n up">+30.8%</td><td class="n">1.4%</td></tr>
-      <tr><td>10</td><td>Otros (ASTELLAS, MCA…)</td><td class="n">$1.0M</td><td class="n">$1.6M</td><td class="n">$0.6M</td><td class="n">$0.7M</td><td class="n">$3.9M</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">0.8%</td></tr>
-    </tbody>
-    <tfoot><tr class="tf"><td></td><td><strong>Total PSP</strong></td><td class="n">$113.8M</td><td class="n">$124.3M</td><td class="n">$136.6M</td><td class="n">$142.8M</td><td class="n">$517.5M</td><td class="n">$519.5M</td><td class="n dn">−$1.9M</td><td class="n dn">−0.4%</td><td class="n">100%</td></tr></tfoot>
-  </table></div>
+
+  <!-- RESUMEN EJECUTIVO HC B2B -->
+  <div class="exec-box">
+    <div class="exec-title">📋 Resumen Ejecutivo — Home Care B2B</div>
+    <div class="exec-body">
+      <div class="exec-item"><strong>Línea líder del período</strong>Con $802.9M acumulados, HC B2B supera el Budget en +$61.7M (+8.3%), siendo la única línea con superávit significativo. Representa el 39.8% de la venta total de Serproen.</div>
+      <div class="exec-item"><strong>Tendencia mensual ascendente</strong>Tras la caída en Febrero ($177.3M), la línea se recupera en Marzo ($199.7M) y alcanza su máximo en Abril ($228.3M), con un alza de +14.3% respecto a Enero.</div>
+      <div class="exec-item"><strong>MUTUAL Santiago y ESACHS anclan el área</strong>Ambos clientes suman $645.3M (80.4% del área). MUTUAL Santiago ($411.4M) es el cliente individual más relevante de toda la compañía.</div>
+      <div class="exec-item"><strong>Nuevos clientes activos en Abril</strong>OPERATIVOS ($18.8M) ingresa al área en Abril. MEGASALUD aporta $2.1M. Diversificación incipiente que abre oportunidades de crecimiento.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px"><h3>Venta por cliente — Acumulado Ene–Abr</h3><div class="chart-wrap-lg"><canvas id="hc-clientes"></canvas></div></div>
+
+  <div class="card">
+    <h3>Detalle clientes Home Care B2B</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Cliente</th><th>Enero</th><th>Febrero</th><th>Marzo</th><th>Abril</th><th>Acumulado</th><th>Part. %</th></tr></thead>
+        <tbody>
+          <tr><td>MUTUAL Santiago</td><td>$96.2M</td><td>$93.4M</td><td>$105.5M</td><td>$116.3M</td><td>$411.4M</td><td>51.2%</td></tr>
+          <tr><td>ESACHS</td><td>$57.8M</td><td>$51.9M</td><td>$57.2M</td><td>$67.0M</td><td>$233.9M</td><td>29.1%</td></tr>
+          <tr><td>MUTUAL Viña</td><td>$43.7M</td><td>$32.0M</td><td>$37.0M</td><td>$8.1M</td><td>$120.8M</td><td>15.0%</td></tr>
+          <tr><td>OPERATIVOS</td><td>—</td><td>—</td><td>—</td><td>$18.8M</td><td>$18.8M</td><td>2.3%</td></tr>
+          <tr><td>Serv.Aux. PFIZER</td><td>—</td><td>—</td><td>—</td><td>$16.0M</td><td>$16.0M</td><td>2.0%</td></tr>
+          <tr><td>MEGASALUD</td><td>—</td><td>—</td><td>—</td><td>$2.1M</td><td>$2.1M</td><td>0.3%</td></tr>
+          <tr><td>Total HC B2B</td><td>$197.7M</td><td>$177.3M</td><td>$199.7M</td><td>$228.3M</td><td>$802.9M</td><td>100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     RESIDENCIA
-══════════════════════════════════════════ -->
-<div id="tab-residencia" class="page">
-  <div style="height:16px"></div>
-  <div class="kstrip k4">
-    <div class="kpi am"><div class="klbl">Venta Acumulada</div><div class="kval">$565.7M</div><div class="knote">Ene–Abr 2026</div></div>
-    <div class="kpi tl"><div class="klbl">Budget Acumulado</div><div class="kval">$559.0M</div></div>
-    <div class="kpi"><div class="klbl">Dif. vs Budget</div><div class="kval">+$6.7M</div><div class="kd up"><svg class="arr" viewBox="0 0 8 8"><path d="M4 1l3 4H1z" fill="currentColor"/></svg>+1.2%</div></div>
-    <div class="kpi rd"><div class="klbl">Venta Abril</div><div class="kval">$110.9M</div><div class="kd dn"><svg class="arr" viewBox="0 0 8 8"><path d="M4 7l3-4H1z" fill="currentColor"/></svg>−$43.6M vs Bdgt.</div></div>
+<!-- ═══════════════════════ PSP ═══════════════════════ -->
+<div id="psp" class="page">
+  <div class="mini-kpi-row">
+    <div class="mk"><div class="mk-l">Venta Acum.</div><div class="mk-v">$517.5M</div><div class="mk-s" style="color:var(--dn)">−0.4% vs Bdgt</div></div>
+    <div class="mk"><div class="mk-l">Budget Acum.</div><div class="mk-v">$519.5M</div><div class="mk-s">Proyección</div></div>
+    <div class="mk"><div class="mk-l">Dif. vs Budget</div><div class="mk-v" style="color:var(--dn)">−$1.9M</div><div class="mk-s dn">Leve déficit</div></div>
+    <div class="mk"><div class="mk-l">Mejor Mes</div><div class="mk-v" style="font-size:14px">Abril</div><div class="mk-s" style="color:var(--up)">$142.8M</div></div>
   </div>
-  <div class="cc tall"><div class="ct">Venta mensual por cliente — Residencia</div><canvas id="c-res"></canvas></div>
-  <div class="sl">Detalle por cliente</div>
-  <div class="tc"><table>
-    <thead><tr><th>#</th><th>Cliente</th>
-      <th class="n">Ene</th><th class="n">Feb</th><th class="n">Mar</th><th class="n">Abr</th>
-      <th class="n">Acumulado</th><th class="n">Budget Acum.</th>
-      <th class="n">Dif. vs Bdgt.</th><th class="n">% Dif.</th><th class="n">% Área</th>
-    </tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Hosp. Sótero del Río</td><td class="n">$63.7M</td><td class="n">$65.8M</td><td class="n">$61.6M</td><td class="n">$16.1M</td><td class="n">$207.2M</td><td class="n">$145.0M</td><td class="n up">+$62.2M</td><td class="n up">+42.9%</td><td class="n">36.6%</td></tr>
-      <tr><td>2</td><td>Hosp. San Juan de Dios</td><td class="n">$45.3M</td><td class="n">$49.7M</td><td class="n">$49.1M</td><td class="n">$55.1M</td><td class="n">$199.2M</td><td class="n">$200.0M</td><td class="n dn">−$0.8M</td><td class="n dn">−0.4%</td><td class="n">35.2%</td></tr>
-      <tr><td>3</td><td>Residencia AM (Partic.)</td><td class="n">$28.1M</td><td class="n">$24.3M</td><td class="n">$22.4M</td><td class="n">$20.3M</td><td class="n">$95.1M</td><td class="n">$124.0M</td><td class="n dn">−$28.9M</td><td class="n dn">−23.3%</td><td class="n">16.8%</td></tr>
-      <tr><td>4</td><td>Hosp. del Salvador</td><td class="n">$13.5M</td><td class="n">$8.1M</td><td class="n">$8.9M</td><td class="n">$9.7M</td><td class="n">$40.2M</td><td class="n">$60.0M</td><td class="n dn">−$19.8M</td><td class="n dn">−33.0%</td><td class="n">7.1%</td></tr>
-      <tr><td>5</td><td>ISAPRE Cruz Blanca</td><td class="n">$5.0M</td><td class="n">$4.5M</td><td class="n">$5.0M</td><td class="n">$4.9M</td><td class="n">$19.3M</td><td class="n">$18.0M</td><td class="n up">+$1.3M</td><td class="n up">+7.1%</td><td class="n">3.4%</td></tr>
-      <tr><td>6</td><td>Univ. de las Américas</td><td class="n">$0.0M</td><td class="n">$0.0M</td><td class="n">$0.0M</td><td class="n">$4.6M</td><td class="n">$4.6M</td><td class="n">$0.0M</td><td class="n up">+$4.6M</td><td class="n">—</td><td class="n">0.8%</td></tr>
-    </tbody>
-    <tfoot><tr class="tf"><td></td><td><strong>Total Residencia</strong></td><td class="n">$155.5M</td><td class="n">$152.4M</td><td class="n">$147.0M</td><td class="n">$110.9M</td><td class="n">$565.7M</td><td class="n">$559.0M</td><td class="n up">+$6.7M</td><td class="n up">+1.2%</td><td class="n">100%</td></tr></tfoot>
-  </table></div>
+
+  <!-- RESUMEN EJECUTIVO PSP -->
+  <div class="exec-box purple">
+    <div class="exec-title">📋 Resumen Ejecutivo — PSP (Soporte a Pacientes)</div>
+    <div class="exec-body">
+      <div class="exec-item"><strong>Déficit marginal, tendencia positiva</strong>El área acumula −$1.9M (−0.4%) bajo Budget, una brecha técnicamente irrelevante. Más importante: la línea crece mes a mes de forma consistente, de $113.8M en Enero a $142.8M en Abril (+25.5%).</div>
+      <div class="exec-item"><strong>SANOFI y PFIZER DE CHILE dominan el área</strong>Con $201.4M y $120.9M respectivamente, representan el 62.3% de la venta PSP. La concentración en estos dos clientes es el principal riesgo de la línea.</div>
+      <div class="exec-item"><strong>Cartera diversificada y activa</strong>9 clientes activos en el período (PTC, ASTRAZENECA, BIOMARIN, LINDE GAS, FARMAHUB, MERCK, COLMENA). ASTRAZENECA muestra aceleración en Abril ($21.1M de los $52.5M totales), señal positiva.</div>
+      <div class="exec-item"><strong>Proyección favorable para Q2</strong>Si la tendencia ascendente se mantiene, PSP podría cerrar el primer semestre por encima del Budget acumulado. El foco debe ser sostener el crecimiento en SANOFI y ASTRAZENECA.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px"><h3>Venta por cliente — Acumulado Ene–Abr</h3><div class="chart-wrap-lg"><canvas id="psp-clientes"></canvas></div></div>
+
+  <div class="card">
+    <h3>Detalle clientes PSP</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Cliente</th><th>Enero</th><th>Febrero</th><th>Marzo</th><th>Abril</th><th>Acumulado</th><th>Part. %</th></tr></thead>
+        <tbody>
+          <tr><td>SANOFI</td><td>$53.1M</td><td>$49.3M</td><td>$49.5M</td><td>$49.5M</td><td>$201.4M</td><td>38.9%</td></tr>
+          <tr><td>PFIZER DE CHILE</td><td>$28.2M</td><td>$30.9M</td><td>$33.3M</td><td>$28.5M</td><td>$120.9M</td><td>23.4%</td></tr>
+          <tr><td>PTC</td><td>$14.3M</td><td>$17.1M</td><td>$18.8M</td><td>$17.5M</td><td>$67.7M</td><td>13.1%</td></tr>
+          <tr><td>ASTRAZENECA</td><td>$10.1M</td><td>$9.4M</td><td>$11.9M</td><td>$21.1M</td><td>$52.5M</td><td>10.1%</td></tr>
+          <tr><td>BIOMARIN</td><td>$5.2M</td><td>$7.1M</td><td>$8.4M</td><td>$6.4M</td><td>$27.1M</td><td>5.2%</td></tr>
+          <tr><td>LINDE GAS</td><td>$3.8M</td><td>$3.7M</td><td>$3.8M</td><td>$3.7M</td><td>$15.0M</td><td>2.9%</td></tr>
+          <tr><td>FARMAHUB</td><td>$2.6M</td><td>$2.9M</td><td>$3.0M</td><td>$3.0M</td><td>$11.5M</td><td>2.2%</td></tr>
+          <tr><td>MERCK</td><td>$2.4M</td><td>$2.6M</td><td>$2.7M</td><td>$2.6M</td><td>$10.3M</td><td>2.0%</td></tr>
+          <tr><td>COLMENA</td><td>$1.7M</td><td>$1.8M</td><td>$1.9M</td><td>$1.8M</td><td>$7.2M</td><td>1.4%</td></tr>
+          <tr><td>Total PSP</td><td>$121.4M</td><td>$124.8M</td><td>$133.3M</td><td>$134.1M</td><td>$513.6M</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
-<footer>
-  <svg viewBox="0 0 14 14" fill="none" style="width:12px;height:12px;vertical-align:middle;margin-right:5px"><rect width="14" height="14" rx="3" fill="#2E8B57"/><rect x="5.5" y="2" width="3" height="10" rx="1" fill="white"/><rect x="2" y="5.5" width="10" height="3" rx="1" fill="white"/></svg>
-  SERPROEN · Dashboard Ventas 2026 · Fuente: Base_Ventas_2026.xlsx · Generado abril 2026
-</footer>
+<!-- ═══════════════════════ RESIDENCIA ═══════════════════════ -->
+<div id="residencia" class="page">
+  <div class="mini-kpi-row">
+    <div class="mk"><div class="mk-l">Venta Acum.</div><div class="mk-v">$565.7M</div><div class="mk-s" style="color:var(--up)">+1.2% vs Bdgt</div></div>
+    <div class="mk"><div class="mk-l">Budget Acum.</div><div class="mk-v">$559.0M</div><div class="mk-s">Proyección</div></div>
+    <div class="mk"><div class="mk-l">Dif. vs Budget</div><div class="mk-v" style="color:var(--up)">+$6.7M</div><div class="mk-s up">Superávit</div></div>
+    <div class="mk"><div class="mk-l">Tendencia Abril</div><div class="mk-v" style="color:var(--dn);font-size:14px">−$36.1M</div><div class="mk-s dn">vs Marzo</div></div>
+  </div>
+
+  <!-- RESUMEN EJECUTIVO RESIDENCIA -->
+  <div class="exec-box amber">
+    <div class="exec-title">📋 Resumen Ejecutivo — Residencia</div>
+    <div class="exec-body">
+      <div class="exec-item"><strong>Superávit acumulado con señal de alerta</strong>El área cierra Ene–Abr con +$6.7M (+1.2%) sobre Budget. Sin embargo, Abril registra $110.9M, el peor mes del período y −$36.1M respecto a Marzo, una caída del −24.6%.</div>
+      <div class="exec-item"><strong>Sótero del Río y San Juan de Dios como pilares</strong>Ambos hospitales concentran $406.4M (71.8% del área). La variabilidad en sus facturaciones hospitalarias (lag de cobranza) puede explicar fluctuaciones mensuales importantes.</div>
+      <div class="exec-item"><strong>Residencia AM Particular en tercer lugar</strong>$95.1M acumulados (16.8%), con comportamiento más estable que los clientes hospitalarios. Buen ancla para la estabilidad del área.</div>
+      <div class="exec-item"><strong>Incorporación de Univ. Las Américas en Abril</strong>Nuevo cliente con $4.6M en su primer mes. Segmento universitario/educación ofrece potencial de expansión en servicios de salud ocupacional y campus.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px"><h3>Venta por cliente — Acumulado Ene–Abr</h3><div class="chart-wrap-lg"><canvas id="res-clientes"></canvas></div></div>
+
+  <div class="card">
+    <h3>Detalle clientes Residencia</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Cliente</th><th>Enero</th><th>Febrero</th><th>Marzo</th><th>Abril</th><th>Acumulado</th><th>Part. %</th></tr></thead>
+        <tbody>
+          <tr><td>H. Sótero del Río</td><td>$63.7M</td><td>$65.8M</td><td>$61.6M</td><td>$16.1M</td><td>$207.2M</td><td>36.6%</td></tr>
+          <tr><td>H. San Juan de Dios</td><td>$45.3M</td><td>$49.7M</td><td>$49.1M</td><td>$55.1M</td><td>$199.2M</td><td>35.2%</td></tr>
+          <tr><td>Residencia AM (Part.)</td><td>$28.1M</td><td>$24.3M</td><td>$22.4M</td><td>$20.3M</td><td>$95.1M</td><td>16.8%</td></tr>
+          <tr><td>H. del Salvador</td><td>$13.5M</td><td>$8.1M</td><td>$8.9M</td><td>$9.7M</td><td>$40.2M</td><td>7.1%</td></tr>
+          <tr><td>ISAPRE Cruz Blanca</td><td>$5.0M</td><td>$4.5M</td><td>$5.0M</td><td>$4.9M</td><td>$19.3M</td><td>3.4%</td></tr>
+          <tr><td>Univ. Las Américas</td><td>—</td><td>—</td><td>—</td><td>$4.6M</td><td>$4.6M</td><td>0.8%</td></tr>
+          <tr><td>Total Residencia</td><td>$155.5M</td><td>$152.4M</td><td>$147.0M</td><td>$110.9M</td><td>$565.7M</td><td>100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 <script>
-/* ─── CHART.JS ─── */
-var charts={}, ready=false, pending='resumen';
+var ready=false,pending=[],charts={};
 (function(){
   var s=document.createElement('script');
   s.src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js';
-  s.onload=function(){ready=true;buildCharts(pending);};
+  s.onload=function(){ready=true;buildCharts(pending);pending=[]};
   document.head.appendChild(s);
 })();
+
+function fmt(v){
+  if(v>=1e9)return'$'+(v/1e9).toFixed(2)+'M (MM)';
+  if(v>=1e6)return'$'+(v/1e6).toFixed(1)+'M';
+  return'$'+v.toLocaleString('es-CL');
+}
+function fmtA(v){return'$'+(v/1e6).toFixed(1)+'M';}
 
 function showTab(id,btn){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('tab-'+id).classList.add('active');
-  if(btn)btn.classList.add('active');
-  pending=id; if(ready)buildCharts(id);
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  if(ready)buildCharts([id]);else{if(!pending.includes(id))pending.push(id);}
 }
 
-/* colores */
-var C={
-  ve:'#2E8B57',ve2:'#4CAF82',ve3:'#1F5C3A',
-  pu:'#5B4AC8',am:'#C07C10',tl:'#0B7A7A',
-  up:'#1A7A45',dn:'#B91C1C',
-  bdg:'rgba(200,226,212,.55)',bdg_b:'rgba(46,139,87,.3)',
-  txt:'#7FAD95',txt2:'#3D6655',grid:'rgba(200,226,212,.65)'
-};
+function buildCharts(ids){
+  if(!ids||ids.length===0)return;
+  ids.forEach(function(id){
+    if(id==='resumen'&&!charts.donut)buildResumen();
+    if(id==='pormes'&&!charts.mesbar)buildPorMes();
+    if(id==='topclientes'&&!charts.top10)buildTopClientes();
+    if(id==='porlinea'&&!charts.lineaacum)buildPorLinea();
+    if(id==='hcb2b'&&!charts.hcbar)buildHCB2B();
+    if(id==='psp'&&!charts.pspbar)buildPSP();
+    if(id==='residencia'&&!charts.resbar)buildResidencia();
+  });
+}
+
 var MESES=['Enero','Febrero','Marzo','Abril'];
+var COL={hc:'rgba(46,139,87,',ps:'rgba(91,74,200,',re:'rgba(192,124,16,',pa:'rgba(11,122,122,'};
 
-/* opciones globales modo claro */
-var gopt={
-  responsive:true,
-  plugins:{legend:{labels:{color:C.txt2,font:{family:"'Plus Jakarta Sans',sans-serif",size:10.5},boxWidth:12,padding:14}}},
-  scales:{
-    x:{grid:{color:C.grid},ticks:{color:C.txt,font:{size:9.5}}},
-    y:{grid:{color:C.grid},ticks:{color:C.txt,font:{size:9.5,family:"'DM Mono',monospace"},callback:v=>fm(v)}}
-  }
-};
-function fm(v){
-  if(Math.abs(v)>=1e9)return '$'+(v/1e9).toFixed(1)+'B';
-  if(Math.abs(v)>=1e6)return '$'+(v/1e6).toFixed(0)+'M';
-  return '$'+v;
+var gopt={responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{family:'Plus Jakarta Sans',size:11},boxWidth:10,padding:14}}},scales:{x:{grid:{display:false},ticks:{font:{family:'Plus Jakarta Sans',size:11}}},y:{grid:{color:'rgba(200,226,212,.3)'},ticks:{font:{family:'Plus Jakarta Sans',size:10},callback:function(v){return'$'+(v/1e6).toFixed(0)+'M';}}}}};
+
+function buildResumen(){
+  // Donut
+  charts.donut=new Chart(document.getElementById('donut'),{
+    type:'doughnut',
+    data:{labels:['HC B2B','PSP','Residencia','Particulares'],
+      datasets:[{data:[802.9,517.5,565.7,131.6],
+        backgroundColor:['rgba(46,139,87,.85)','rgba(91,74,200,.85)','rgba(192,124,16,.85)','rgba(11,122,122,.85)'],
+        borderWidth:2,borderColor:'#fff',hoverOffset:6}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',
+      plugins:{legend:{position:'right',labels:{font:{family:'Plus Jakarta Sans',size:11},boxWidth:10,padding:12}},
+      tooltip:{callbacks:{label:function(c){return' $'+c.parsed.toFixed(1)+'M ('+((c.parsed/2018.7)*100).toFixed(1)+'%)';}}}}}
+  });
+  // Bar Línea vs Bdgt
+  charts.barlinea=new Chart(document.getElementById('barlinea'),{
+    type:'bar',
+    data:{labels:['HC B2B','PSP','Residencia','Particulares'],
+      datasets:[
+        {label:'Venta',data:[802.9,517.5,565.7,131.6],backgroundColor:['rgba(46,139,87,.8)','rgba(91,74,200,.8)','rgba(192,124,16,.8)','rgba(11,122,122,.8)'],borderRadius:5},
+        {label:'Budget',data:[741.2,519.5,559.0,133.0],backgroundColor:'rgba(200,226,212,.55)',borderWidth:1.5,borderColor:'rgba(46,139,87,.4)',borderRadius:5}
+      ]},options:gopt
+  });
+  // Line evolution
+  charts.lineas=new Chart(document.getElementById('lineas'),{
+    type:'line',
+    data:{labels:MESES,
+      datasets:[
+        {label:'HC B2B',data:[197.7,177.3,199.7,228.3],borderColor:'#2E8B57',backgroundColor:'rgba(46,139,87,.08)',tension:.4,pointRadius:4,pointBackgroundColor:'#2E8B57',fill:false},
+        {label:'PSP',data:[113.8,124.3,136.6,142.8],borderColor:'#5B4AC8',backgroundColor:'rgba(91,74,200,.08)',tension:.4,pointRadius:4,pointBackgroundColor:'#5B4AC8',fill:false},
+        {label:'Residencia',data:[155.5,152.4,147.0,110.9],borderColor:'#C07C10',backgroundColor:'rgba(192,124,16,.08)',tension:.4,pointRadius:4,pointBackgroundColor:'#C07C10',fill:false},
+        {label:'Particulares',data:[33.0,28.5,37.9,32.1],borderColor:'#0B7A7A',backgroundColor:'rgba(11,122,122,.08)',tension:.4,pointRadius:4,pointBackgroundColor:'#0B7A7A',fill:false}
+      ]},options:gopt
+  });
 }
 
-function buildCharts(tab){
-
-  /* ── RESUMEN ── */
-  if(tab==='resumen'){
-    if(!charts.donut)charts.donut=new Chart(document.getElementById('c-donut'),{
-      type:'doughnut',
-      data:{
-        labels:['Home Care B2B','PSP','Residencia','Particulares'],
-        datasets:[{data:[802928131,517529966,565659539,131609417],
-          backgroundColor:[C.ve,C.pu,C.am,C.tl],
-          borderColor:'#fff',borderWidth:3,hoverOffset:6}]
-      },
-      options:{responsive:true,cutout:'66%',
-        plugins:{
-          legend:{position:'bottom',labels:{color:C.txt2,font:{family:"'Plus Jakarta Sans'",size:10.5},boxWidth:12,padding:12}},
-          tooltip:{callbacks:{label:c=>{var t=c.dataset.data.reduce((a,b)=>a+b,0);return c.label+': '+fm(c.raw)+' ('+(c.raw/t*100).toFixed(1)+'%)'}}}
-        }}
-    });
-    if(!charts.areabar)charts.areabar=new Chart(document.getElementById('c-areabar'),{
-      type:'bar',
-      data:{labels:['HC B2B','PSP','Residencia','Particulares'],
-        datasets:[
-          {label:'Budget',data:[741207200,519465478,559000000,133000000],backgroundColor:C.bdg,borderColor:C.bdg_b,borderWidth:1.5,borderRadius:4},
-          {label:'Vendido',data:[802928131,517529966,565659539,131609417],backgroundColor:[C.ve,C.pu,C.am,C.tl],borderRadius:4}
-        ]},
-      options:gopt
-    });
-    if(!charts.evol)charts.evol=new Chart(document.getElementById('c-evol'),{
-      type:'line',
-      data:{labels:MESES,
-        datasets:[
-          {label:'HC B2B',data:[197676327,177255739,199718661,228277404],borderColor:C.ve,backgroundColor:'rgba(46,139,87,.07)',tension:.4,pointRadius:6,pointHoverRadius:9,borderWidth:2.5,fill:true},
-          {label:'PSP',data:[113750378,124348214,136649839,142781535],borderColor:C.pu,backgroundColor:'rgba(91,74,200,.06)',tension:.4,pointRadius:6,pointHoverRadius:9,borderWidth:2.5,fill:true},
-          {label:'Residencia',data:[155483189,152359572,146965040,110851738],borderColor:C.am,backgroundColor:'rgba(192,124,16,.06)',tension:.4,pointRadius:6,pointHoverRadius:9,borderWidth:2.5,fill:true},
-          {label:'Particulares',data:[33014666,28549642,37897823,32147286],borderColor:C.tl,backgroundColor:'rgba(11,122,122,.05)',tension:.4,pointRadius:6,pointHoverRadius:9,borderWidth:2.5,fill:true}
-        ]},
-      options:gopt
-    });
-  }
-
-  /* ── POR MES ── */
-  if(tab==='mensual'){
-    if(!charts.mensual)charts.mensual=new Chart(document.getElementById('c-mensual'),{
-      type:'bar',
-      data:{labels:['Home Care B2B','PSP','Residencia','Particulares'],
-        datasets:[
-          {label:'Enero', data:[197676327,113750378,155483189,33014666],backgroundColor:'rgba(46,139,87,.88)',borderRadius:4},
-          {label:'Febrero',data:[177255739,124348214,152359572,28549642],backgroundColor:'rgba(46,139,87,.55)',borderRadius:4},
-          {label:'Marzo',  data:[199718661,136649839,146965040,37897823],backgroundColor:'rgba(46,139,87,.28)',borderRadius:4},
-          {label:'Abril',  data:[228277404,142781535,110851738,32147286],backgroundColor:'rgba(46,139,87,.1)',borderRadius:4}
-        ]},
-      options:gopt
-    });
-  }
-
-  /* ── TOP CLIENTES ── */
-  if(tab==='clientes'){
-    var td=[
-      {n:'MUTUAL Santiago',  a:'HC B2B',    ch:'ci',e:101941841,f:87896484,m:113372645,a2:108175044},
-      {n:'H.Sótero del Río', a:'Residencia',ch:'cr',e:63704000, f:65812000,m:61632000, a2:16092000},
-      {n:'ESACHS',           a:'HC B2B',    ch:'ci',e:60079095, f:58450691,m:53887625, a2:61503476},
-      {n:'H.San Juan de Dios',a:'Residencia',ch:'cr',e:45291000,f:49662000,m:49086900, a2:55149000},
-      {n:'SANOFI',           a:'PSP',       ch:'cl',e:44680772, f:54415056,m:51993714, a2:50261189},
-      {n:'PFIZER DE CHILE',  a:'PSP',       ch:'cl',e:32738961, f:28746732,m:28119967, a2:31336344},
-      {n:'MUTUAL Viña',      a:'HC B2B',    ch:'ci',e:30623917, f:25877090,m:28452717, a2:35828960},
-      {n:'Resid.AM(Part.)',  a:'Residencia',ch:'cr',e:28062073, f:24331408,m:22424756, a2:20310532},
-      {n:'HC Stgo.(Part.)', a:'Particulares',ch:'cp',e:28197437,f:25806179,m:34941590, a2:29225226},
-      {n:'PTC',             a:'PSP',        ch:'cl',e:18017373, f:16367992,m:17303001, a2:16028472}
-    ];
-    var tot=2017727053;
-    var tb=document.getElementById('top-tbody');
-    if(tb&&!tb.dataset.ok){
-      tb.dataset.ok=1;
-      td.forEach(function(d,i){
-        var ac=d.e+d.f+d.m+d.a2, pct=(ac/tot*100).toFixed(1);
-        var r=document.createElement('tr');
-        r.innerHTML='<td>'+(i+1)+'</td><td>'+d.n+'</td><td><span class="chip '+d.ch+'">'+d.a+'</span></td>'+
-          '<td class="n">'+fm(d.e)+'</td><td class="n">'+fm(d.f)+'</td><td class="n">'+fm(d.m)+'</td><td class="n">'+fm(d.a2)+'</td>'+
-          '<td class="n"><strong>'+fm(ac)+'</strong></td><td class="n">'+pct+'%</td>'+
-          '<td><div class="rb"><div class="rbbg"><div class="rbf" style="width:'+pct+'%"></div></div><span class="rbp">'+pct+'%</span></div></td>';
-        tb.appendChild(r);
-      });
-    }
-    if(!charts.top10){
-      var lbls=td.map(d=>d.n);
-      var vals=td.map(d=>d.e+d.f+d.m+d.a2);
-      var bgs=td.map(d=>({ci:C.ve,cl:C.pu,cr:C.am,cp:C.tl}[d.ch]));
-      charts.top10=new Chart(document.getElementById('c-top10'),{
-        type:'bar',
-        data:{labels:lbls,datasets:[{label:'Venta Acum.',data:vals,backgroundColor:bgs,borderRadius:5}]},
-        options:{indexAxis:'y',responsive:true,
-          plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+fm(c.raw)}}},
-          scales:{
-            x:{grid:{color:C.grid},ticks:{color:C.txt,font:{size:9.5,family:"'DM Mono'"},callback:v=>fm(v)}},
-            y:{grid:{display:false},ticks:{color:C.txt2,font:{size:10.5}}}
-          }}
-      });
-    }
-  }
-
-  /* ── POR LÍNEA ── */
-  if(tab==='linea'){
-    if(!charts.l1)charts.l1=new Chart(document.getElementById('c-linea1'),{
-      type:'bar',
-      data:{labels:['HC B2B','PSP','Residencia','Particulares'],
-        datasets:[{label:'Venta Acum.',data:[802928131,517529966,565659539,131609417],
-          backgroundColor:[C.ve,C.pu,C.am,C.tl],borderRadius:5}]},
-      options:Object.assign({},gopt,{plugins:{legend:{display:false}}})
-    });
-    if(!charts.l2)charts.l2=new Chart(document.getElementById('c-linea2'),{
-      type:'bar',
-      data:{labels:['HC B2B','PSP','Residencia','Particulares'],
-        datasets:[
-          {label:'Budget',data:[741207200,519465478,559000000,133000000],backgroundColor:C.bdg,borderColor:C.bdg_b,borderWidth:1.5,borderRadius:4},
-          {label:'Vendido',data:[802928131,517529966,565659539,131609417],backgroundColor:[C.ve,C.pu,C.am,C.tl],borderRadius:4}
-        ]},
-      options:gopt
-    });
-  }
-
-  /* ── HC B2B ── */
-  if(tab==='hcb2b'){
-    if(!charts.hcb2b)charts.hcb2b=new Chart(document.getElementById('c-hcb2b'),{
-      type:'bar',
-      data:{labels:['MUTUAL Santiago','ESACHS','MUTUAL Viña','OPERATIVOS','Serv.Aux.PFIZER','MEGASALUD'],
-        datasets:[
-          {label:'Enero',  data:[101941841,60079095,30623917,0,4005674,1025800],backgroundColor:'rgba(46,139,87,.88)',borderRadius:4},
-          {label:'Febrero',data:[87896484,58450691,25877090,0,4005674,1025800],backgroundColor:'rgba(46,139,87,.55)',borderRadius:4},
-          {label:'Marzo',  data:[113372645,53887625,28452717,0,4005674,0],backgroundColor:'rgba(46,139,87,.28)',borderRadius:4},
-          {label:'Abril',  data:[108175044,61503476,35828960,18764250,4005674,0],backgroundColor:'rgba(46,139,87,.1)',borderRadius:4}
-        ]},
-      options:gopt
-    });
-  }
-
-  /* ── PSP ── */
-  if(tab==='psp'){
-    if(!charts.psp)charts.psp=new Chart(document.getElementById('c-psp'),{
-      type:'bar',
-      data:{labels:['SANOFI','PFIZER','PTC','ASTRAZENECA','BIOMARIN','LINDE GAS','FARMAHUB','MERCK','COLMENA'],
-        datasets:[
-          {label:'Enero',  data:[44680772,32738961,18017373,9760191,4255295,2282772,0,-791578,1800750],backgroundColor:'rgba(91,74,200,.85)',borderRadius:4},
-          {label:'Febrero',data:[54415056,28746732,16367992,8770981,6972133,3709068,0,2499359,1389150],backgroundColor:'rgba(91,74,200,.5)',borderRadius:4},
-          {label:'Marzo',  data:[51993714,28119967,17303001,12872858,9824066,4470270,5744356,3778874,1800750],backgroundColor:'rgba(91,74,200,.25)',borderRadius:4},
-          {label:'Abril',  data:[50261189,31336344,16028472,21058421,6070629,4533992,5773065,4798699,2212350],backgroundColor:'rgba(91,74,200,.1)',borderRadius:4}
-        ]},
-      options:gopt
-    });
-  }
-
-  /* ── RESIDENCIA ── */
-  if(tab==='residencia'){
-    if(!charts.res)charts.res=new Chart(document.getElementById('c-res'),{
-      type:'bar',
-      data:{labels:['H.Sótero del Río','H.San Juan de Dios','Resid.AM(Part.)','H.del Salvador','ISAPRE Cruz Blanca','Univ.Las Américas'],
-        datasets:[
-          {label:'Enero',  data:[63704000,45291000,28062073,13475602,4950514,0],backgroundColor:'rgba(192,124,16,.88)',borderRadius:4},
-          {label:'Febrero',data:[65812000,49662000,24331408,8082732,4471432,0],backgroundColor:'rgba(192,124,16,.52)',borderRadius:4},
-          {label:'Marzo',  data:[61632000,49086900,22424756,8870870,4950514,0],backgroundColor:'rgba(192,124,16,.26)',borderRadius:4},
-          {label:'Abril',  data:[16092000,55149000,20310532,9749690,4905810,4644706],backgroundColor:'rgba(192,124,16,.1)',borderRadius:4}
-        ]},
-      options:gopt
-    });
-  }
+function buildPorMes(){
+  charts.mesbar=new Chart(document.getElementById('mes-barras'),{
+    type:'bar',
+    data:{labels:MESES,
+      datasets:[
+        {label:'HC B2B',data:[197.7,177.3,199.7,228.3],backgroundColor:'rgba(46,139,87,.85)',borderRadius:4,stack:'s'},
+        {label:'PSP',data:[113.8,124.3,136.6,142.8],backgroundColor:'rgba(91,74,200,.85)',borderRadius:4,stack:'s'},
+        {label:'Residencia',data:[155.5,152.4,147.0,110.9],backgroundColor:'rgba(192,124,16,.85)',borderRadius:4,stack:'s'},
+        {label:'Particulares',data:[33.0,28.5,37.9,32.1],backgroundColor:'rgba(11,122,122,.85)',borderRadius:4,stack:'s'}
+      ]},
+    options:{...gopt,scales:{x:{stacked:true,grid:{display:false},ticks:{font:{family:'Plus Jakarta Sans',size:11}}},y:{stacked:true,grid:{color:'rgba(200,226,212,.3)'},ticks:{font:{family:'Plus Jakarta Sans',size:10},callback:function(v){return'$'+(v/1e6).toFixed(0)+'M';}}}}}
+  });
 }
+
+function buildTopClientes(){
+  charts.top10=new Chart(document.getElementById('top10'),{
+    type:'bar',
+    data:{
+      labels:['MUTUAL Santiago','ESACHS','Sótero del Río','SANOFI','San Juan de Dios','PFIZER DE CHILE','MUTUAL Viña','HC Stgo. Part.','Res. AM Part.','PTC'],
+      datasets:[{
+        label:'Venta acumulada',
+        data:[411.4,233.9,207.2,201.4,199.2,120.9,120.8,118.2,95.1,67.7],
+        backgroundColor:['#2E8B57','#2E8B57','#C07C10','#5B4AC8','#C07C10','#5B4AC8','#2E8B57','#0B7A7A','#C07C10','#5B4AC8'].map(c=>c+'CC'),
+        borderRadius:5,borderSkipped:false
+      }]
+    },
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return' $'+c.parsed.x.toFixed(1)+'M';}}}},
+      scales:{x:{grid:{color:'rgba(200,226,212,.3)'},ticks:{font:{family:'Plus Jakarta Sans',size:10},callback:function(v){return'$'+(v/1e6).toFixed(0)+'M';}}},y:{grid:{display:false},ticks:{font:{family:'Plus Jakarta Sans',size:11}}}}}
+  });
+}
+
+function buildPorLinea(){
+  var lopts=JSON.parse(JSON.stringify(gopt));
+  charts.lineaacum=new Chart(document.getElementById('linea-acum'),{
+    type:'bar',
+    data:{labels:['HC B2B','PSP','Residencia','Particulares'],
+      datasets:[{label:'Venta Acumulada',data:[802.9,517.5,565.7,131.6],
+        backgroundColor:['rgba(46,139,87,.8)','rgba(91,74,200,.8)','rgba(192,124,16,.8)','rgba(11,122,122,.8)'],borderRadius:6}]},
+    options:lopts
+  });
+  charts.lineabudget=new Chart(document.getElementById('linea-budget'),{
+    type:'bar',
+    data:{labels:['HC B2B','PSP','Residencia','Particulares'],
+      datasets:[
+        {label:'Venta',data:[802.9,517.5,565.7,131.6],backgroundColor:['rgba(46,139,87,.8)','rgba(91,74,200,.8)','rgba(192,124,16,.8)','rgba(11,122,122,.8)'],borderRadius:5},
+        {label:'Budget',data:[741.2,519.5,559.0,133.0],backgroundColor:'rgba(200,226,212,.65)',borderWidth:1.5,borderColor:'rgba(46,139,87,.4)',borderRadius:5}
+      ]},options:lopts
+  });
+}
+
+function buildHCB2B(){
+  charts.hcbar=new Chart(document.getElementById('hc-clientes'),{
+    type:'bar',
+    data:{
+      labels:['MUTUAL Santiago','ESACHS','MUTUAL Viña','OPERATIVOS','Serv.Aux. PFIZER','MEGASALUD'],
+      datasets:[
+        {label:'Enero',data:[96.2,57.8,43.7,0,0,0],backgroundColor:'rgba(46,139,87,.88)',borderRadius:4},
+        {label:'Febrero',data:[93.4,51.9,32.0,0,0,0],backgroundColor:'rgba(46,139,87,.55)',borderRadius:4},
+        {label:'Marzo',data:[105.5,57.2,37.0,0,0,0],backgroundColor:'rgba(46,139,87,.32)',borderRadius:4},
+        {label:'Abril',data:[116.3,67.0,8.1,18.8,16.0,2.1],backgroundColor:'rgba(46,139,87,.15)',borderRadius:4}
+      ]
+    },options:gopt
+  });
+}
+
+function buildPSP(){
+  charts.pspbar=new Chart(document.getElementById('psp-clientes'),{
+    type:'bar',
+    data:{
+      labels:['SANOFI','PFIZER DE CHILE','PTC','ASTRAZENECA','BIOMARIN','LINDE GAS','FARMAHUB','MERCK','COLMENA'],
+      datasets:[
+        {label:'Enero',data:[53.1,28.2,14.3,10.1,5.2,3.8,2.6,2.4,1.7],backgroundColor:'rgba(91,74,200,.88)',borderRadius:4},
+        {label:'Febrero',data:[49.3,30.9,17.1,9.4,7.1,3.7,2.9,2.6,1.8],backgroundColor:'rgba(91,74,200,.55)',borderRadius:4},
+        {label:'Marzo',data:[49.5,33.3,18.8,11.9,8.4,3.8,3.0,2.7,1.9],backgroundColor:'rgba(91,74,200,.32)',borderRadius:4},
+        {label:'Abril',data:[49.5,28.5,17.5,21.1,6.4,3.7,3.0,2.6,1.8],backgroundColor:'rgba(91,74,200,.15)',borderRadius:4}
+      ]
+    },options:gopt
+  });
+}
+
+function buildResidencia(){
+  charts.resbar=new Chart(document.getElementById('res-clientes'),{
+    type:'bar',
+    data:{
+      labels:['H. Sótero del Río','H. San Juan de Dios','Res. AM (Part.)','H. del Salvador','ISAPRE Cruz Blanca','Univ. Las Américas'],
+      datasets:[
+        {label:'Enero',data:[63.7,45.3,28.1,13.5,5.0,0],backgroundColor:'rgba(192,124,16,.88)',borderRadius:4},
+        {label:'Febrero',data:[65.8,49.7,24.3,8.1,4.5,0],backgroundColor:'rgba(192,124,16,.55)',borderRadius:4},
+        {label:'Marzo',data:[61.6,49.1,22.4,8.9,5.0,0],backgroundColor:'rgba(192,124,16,.32)',borderRadius:4},
+        {label:'Abril',data:[16.1,55.1,20.3,9.7,4.9,4.6],backgroundColor:'rgba(192,124,16,.15)',borderRadius:4}
+      ]
+    },options:gopt
+  });
+}
+
+// Init
+document.addEventListener('DOMContentLoaded',function(){
+  if(ready)buildCharts(['resumen']);else pending.push('resumen');
+});
 </script>
 </body>
 </html>
